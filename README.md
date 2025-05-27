@@ -4,11 +4,12 @@ This Excel-to-XBRL converter has been developed by EFRAG to support the SME ecos
 
 The tool enables users to convert data from structured Excel templates into XBRL (eXtensible Business Reporting Language) format by leveraging Excel named ranges. Each named range in the Excel file must correspond exactly to the local name of the relevant element in the VSME XBRL taxonomy. This ensures accurate and standards-compliant digital tagging of sustainability disclosures.
 
-A free instance of this tool is running on the EFRAG Webpage: https://xbrl.efrag.org/convert/
+A free instance of this tool is running on the [EFRAG XBRL site](https://xbrl.efrag.org/convert/)
 
-More information on the project, including an [Explanatory Note (PDF)](https://xbrl.efrag.org/downloads/vsme/VSME-Digital-Template-and-XBRL-Taxonomy-Explanatory-Note-May-2025.pdf) is provided here: https://www.efrag.org/en/vsme-digital-template-and-xbrl-taxonomy
+More information on the project, including an [Explanatory Note (PDF)](https://xbrl.efrag.org/downloads/vsme/VSME-Digital-Template-and-XBRL-Taxonomy-Explanatory-Note-May-2025.pdf) is provided on [EFRAG's website](https://www.efrag.org/en/vsme-digital-template-and-xbrl-taxonomy).
 
 ## Key Features
+
 - Streamlines digital sustainability reporting.
 - Maps Excel data to an XBRL instance using named ranges.
 - Compatible with the VSME Digital Template and XBRL Taxonomy developed by EFRAG.
@@ -16,10 +17,11 @@ More information on the project, including an [Explanatory Note (PDF)](https://x
 - Converts the Inline XBRL report to an XBRL Report Package and XBRL-JSON report.
 - Comes with full certified XBRL validation powered by [Arelle](https://arelle.org/arelle/).
 - Can be deployed as a web-server using Flask, or as a command-line tool.
-    
-## Requirements:
+
+## Requirements
+
 - Python enviroment and dependencies (see below).
-- Excel template with named ranges matching VSME taxonomy element names (see [samples folder](https://github.com/EFRAG-EU/vsme-converter/tree/main/samples)).
+- Excel template with named ranges matching VSME taxonomy element names (see [digital templates](https://github.com/EFRAG-EU/Digital-Template-to-XBRL-Converter/tree/main/digital-templates)).
 - XBRL taxonomy files for validation and mapping.
 
 More information can be found on the [EFRAG webpage](https://www.efrag.org/en/sustainability-reporting/esrs-workstreams/digital-tagging-with-xbrl-taxonomies)
@@ -28,21 +30,21 @@ More information can be found on the [EFRAG webpage](https://www.efrag.org/en/su
 
 ### Initital setup
 
-* Install Python 3.11 or later (available from [the Microsoft Store](https://apps.microsoft.com/detail/9nrwmjp3717k))
-* Install `venv`
-  * `pip install venv`
-* Clone repository `git clone https://github.com/EFRAG-EU/vsme-converter.git`
-* Create a `.venv` inside the repository
-  * `cd vsme-converter`
-  * `python -m venv .venv`
-* `.venv/Scripts/activate` Always do this when you open a new terminal, before trying to run commands from the repository
-  * `source .venv/bin/activate` on Linux
-* `pip install .`
+- Install Python 3.11 or later (available from [the Microsoft Store](https://apps.microsoft.com/detail/9nrwmjp3717k))
+- Install `venv`
+  - `pip install venv`
+- Clone repository `git clone https://github.com/EFRAG-EU/Digital-Template-to-XBRL-Converter.git`
+- Create a `.venv` inside the repository
+  - `cd Digital-Template-to-XBRL-Converter`
+  - `python -m venv .venv`
+- `.venv/Scripts/activate` Always do this when you open a new terminal, before trying to run commands from the repository
+  - `source .venv/bin/activate` on Linux
+- `pip install .`
 
 ### Convert an Excel file to an inline XBRL file (command-line)
 
 ```bash
-python .\scripts\parse-and-ixbrl.py example.xlsx  output.html
+python ./scripts/parse-and-ixbrl.py example.xlsx  output.html
 ```
 
 ### Run webserver locally
@@ -72,6 +74,7 @@ python .\scripts\parse-and-dump.py example.xlsx
 ```
 
 ## List of dependencies
+
 - **[pydantic](https://pypi.org/project/pydantic/)**: Data validation and settings management using Python type annotations.
 - **[python-dotenv](https://pypi.org/project/python-dotenv/)**: Read key-value pairs from `.env` files and set them as environment variables.
 - **[openpyxl](https://pypi.org/project/openpyxl/)**: Read/write Excel 2010 xlsx/xlsm/xltx/xltm files.
@@ -85,11 +88,14 @@ python .\scripts\parse-and-dump.py example.xlsx
 - **[ixbrl-viewer](https://pypi.org/project/ixbrl-viewer/)**: Inline XBRL viewer.
 - **[waitress](https://pypi.org/project/waitress/)**: WSGI server for Python.
 
-# Funding
-<img src="https://www.efrag.org/sites/default/files/styles/pg_text_media/public/2023-12/166824540_max.jpg" width=20% height=20%>
-EFRAG is co-funded by the European Union through the Single Market Programmein which the EEA-EFTA countries (Norway, Iceland and Liechtenstein), as well as Kosovo participate. Any views and opinions expressed are however those of the EFRAG Secretariat only and do not necessarily reflect those of the European Union, the European Commission or of countries that participate in the Single Market Programme. Neither the European Union, the European Commission nor countries participating in the Single market Programmecan be held responsible for them.
+## Funding
+
+<img src="https://www.efrag.org/sites/default/files/styles/pg_text_media/public/2023-12/166824540_max.jpg" width=20% height=20% alt="EU flag">
+
+EFRAG is co-funded by the European Union through the Single Market Programme in which the EEA-EFTA countries (Norway, Iceland and Liechtenstein), as well as Kosovo participate. Any views and opinions expressed are however those of the EFRAG Secretariat only and do not necessarily reflect those of the European Union, the European Commission or of countries that participate in the Single Market Programme. Neither the European Union, the European Commission nor countries participating in the Single market Programmecan be held responsible for them.
 
 ## How to contribute
+
 - Contribute to the project by raising issues in Github (provide all information to reproduce the issue)
 - Become a [Friend of EFRAG](https://www.efrag.org/en/about-us/friends-of-efrag) to support us on our mission and to ensure continued maintenance.
 - If you would like to become contributor, please clone the repository and provide well documented pull requests, including unit tests.
