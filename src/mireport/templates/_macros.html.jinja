@@ -1,0 +1,46 @@
+{% macro download_button(ftype, url, is_enabled=True) %}
+    {% set button_data = {
+        'viewer': {
+            'text': 'Download viewer',
+            'help': 'Download Inline XBRL Report (including Viewer; machine-readable and human-readable). \nReview and inspect the human-readable XHTML XBRL report with a viewer that shows you the underlying machine-readable XBRL tagging.',
+            'icon_id': 'icon-globe',
+            'spinner_text': 'Generating viewer',
+        },
+        'json': {
+            'text': 'Download xBRL-JSON',
+            'help': 'Download xBRL-JSON (machine-readable). \nMachine-readable dataset without human-readable report (for illustrative purposes and use with analytics tools).',
+            'icon_id': 'icon-file-code',
+            'spinner_text': 'Generating xBRL-JSON',
+        },
+        'zip': {
+            'text': 'Download XBRL Report',
+            'help': 'Download Inline XBRL Report Package (for submission or publication; machine-readable and human-readable). \nFinal report package that could be submitted/published (without viewer).',
+            'icon_id': 'icon-archive',
+            'spinner_text': 'Retrieving XBRL report',
+        },
+        'excel': {
+            'text': 'Download Excel',
+            'help': 'Download the previously uploaded Excel report.',
+            'icon_id': 'icon-spreadsheet',
+            'spinner_text': 'Retrieving Excel report',
+        }
+    } %}
+    
+    {% set data = button_data[ftype] %}
+
+<div class="relative group">
+    <a href="{{ url if is_enabled else '#' }}" 
+        class="download-handler flex items-center gap-2 font-medium py-2 px-4 rounded-lg shadow transition duration-200
+            {{ 'bg-green-600 hover:bg-green-700 text-white' if is_enabled else 'bg-gray-400 text-gray-200 cursor-not-allowed' }}"
+        {% if not is_enabled %} aria-disabled="true" tabindex="-1" {% endif %}
+        data-spinner-text="{{ data.spinner_text }}">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor">
+            <use href="#{{ data.icon_id }}"></use>
+        </svg>
+        {{ data.text }}
+    </a>
+    <div class="absolute bottom-full left-0 mb-1 hidden group-hover:block w-64 bg-gray-800 text-white text-sm rounded px-2 py-1 shadow-lg z-10">
+        {{ data.help }}
+    </div>
+</div>
+{% endmacro %}

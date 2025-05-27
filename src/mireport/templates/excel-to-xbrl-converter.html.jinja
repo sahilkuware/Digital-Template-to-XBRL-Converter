@@ -1,0 +1,101 @@
+{% extends "base.html.jinja" %}
+
+{% block title %}VSME Digital Template to XBRL Converter{% endblock %}
+
+{% block content %}
+
+
+<!-- Info Section -->
+<div class="text-sm text-gray-700 space-y-2">
+  <p class="font-medium">Follow these steps to convert your VSME Digital Template to the XBRL format:</p>
+  <ol class="list-decimal list-inside space-y-1 pl-4">
+    <li>Download the <a href="https://xbrl.efrag.org/downloads/vsme/VSME-Digital-Template-latest.xlsx" class="text-blue-600 underline hover:text-blue-800">VSME Digital Template</a> provided by EFRAG (or test the <a href="https://xbrl.efrag.org/downloads/vsme/VSME-Digital-Template-sample-latest.xlsx" class="text-blue-600 underline hover:text-blue-800">sample report</a>).</li>
+    <li>Follow the instructions in the Digital Template and fill in the required disclosures in each worksheet. Before starting the conversion, ensure that the Overall Validation Status shows "OK".</li>
+    <li>Select the Digital Template file below and start the conversion. The conversion process may take a few minutes.</li>
+    <li>Review the generated XBRL report and the messages to ensure that all disclosures are complete and accurate.</li>
+    <li>Download and save your converted XBRL files.</li>
+  </ol>
+</div>
+
+<!-- Error Message -->
+{% if error_message %}
+<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+  <span class="block sm:inline">{{ error_message }}</span>
+</div>
+{% endif %}
+
+<!-- Loading Spinner -->
+<div id="loadingSpinner" class="flex fixed inset-0 bg-black/80 items-center justify-center z-50 hidden">
+  <div class="flex items-center text-white text-lg font-bold border-4 border-white p-4 rounded-lg bg-black">
+    <!-- Animated Spinner -->
+    <svg class="mr-3 h-5 w-5 animate-spin text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 008 8V4a8 8 0 00-8 8z"></path>
+    </svg>
+    Converting... Please wait.
+  </div>
+</div>
+
+
+<!-- Upload Form -->
+<form action="{{ url_for('basic.upload')}}" method="post" enctype="multipart/form-data" class="space-y-4" onsubmit="showSpinner()">
+
+  <div>
+    <label for="file" class="block text-sm font-medium text-gray-700 mb-1">Choose the XLSX Digital Template file</label>
+    <input type="file" id="file" name="file" accept=".xlsx"
+      class="block w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+      required />
+  </div>
+
+  {% if ENABLE_CAPTCHA %}
+  <!-- CSRF Token -->
+  <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}" />
+
+  <!-- Captcha -->
+  <div>
+    <label id="captchaLabel" for="captcha" class="block text-sm font-medium text-gray-700 mb-1"></label>
+    <input type="text" id="captcha" name="captcha" title="Please calculate the sum of the two numbers in order to check that you are human."
+      class="block w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+      required />
+  </div>
+{% endif %}
+
+  <!-- Terms and Conditions -->
+  <div class="flex items-center space-x-2">
+    <input id="terms" type="checkbox" required
+      class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" />
+    <label for="terms" class="text-sm text-gray-600">
+      I agree to the
+      <button type="button" onclick="openModal()" class="text-blue-600 underline">terms and conditions</button>.
+    </label>
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit"
+    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition">
+    Upload & Convert Digital Template
+  </button>
+  {% if existing_conversions %}
+  <!-- Existing users -->
+  <a href="{{url_for('basic.conversions')}}" class="w-full text-center inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition">
+    Access My Previous Conversions
+  </a>
+  {% endif %}
+</form>
+
+
+
+ {% if ENABLE_CAPTCHA %}
+<!-- Captcha Script -->
+<script>
+  async function fetchCaptcha() {
+    const response = await fetch("{{ url_for('basic.generate_captcha') }}");
+    const data = await response.json();
+    document.getElementById('captchaLabel').textContent = data.question;
+  }
+
+  // Fetch captcha on page load
+  document.addEventListener('DOMContentLoaded', fetchCaptcha);
+</script>
+{% endif %}
+{% endblock %}

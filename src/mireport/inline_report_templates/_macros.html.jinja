@@ -1,0 +1,48 @@
+{% macro render_fact_value(fact, unitAlreadyDisplayed) -%}
+    {%- if fact.concept.isMonetary -%}
+        {{- fact.unitSymbol }} {{ fact.as_aoix() -}}
+    {%- elif fact.concept.isNumeric -%}
+        {{- fact.as_aoix() }} {% if not unitAlreadyDisplayed %}{{ fact.unitSymbol -}}{% endif %}
+    {%- else -%}
+        {{- fact.as_aoix() -}}
+    {%- endif -%}
+{%- endmacro %}
+
+{% macro render_fact_period(fact) -%}
+    {%- if fact.concept.periodType.value == "duration" -%}
+        {{ render_duration_period(fact.period) }}
+    {%- else -%}
+        {{ render_instant_period(fact.period) }}
+    {%- endif -%}
+{%- endmacro %}
+
+{% macro render_duration_period(period) -%}
+    {{- period.start }} &#8211; {{ period.end -}}
+{%- endmacro %}
+
+{% macro render_duration_period_endyear(period) -%}
+    {{- period.end.year -}}
+{%- endmacro %}
+
+{% macro render_instant_period(period) -%}
+    {{- period.instant -}}
+{%- endmacro %}
+
+{% macro create_h2_title(section, loop) -%}
+            <h2 id="section-class{{loop.index}}">
+            {{ section.title | e }}
+            <a href="#table-of-contents" class="toc-back-link no-print">⮌</a>
+            </h2>
+{%- endmacro %}
+
+{% macro render_symbol(symbol) -%}
+    <code>{{ symbol.symbol | e }}</code> ({{ symbol.name | e }})
+{%- endmacro %}
+
+{% macro render_datetime(dt, iso = False) -%}
+    {%- if iso is true -%}
+        {{- dt.isoformat(timespec="seconds") -}}
+    {%- else -%}
+        {{- dt.strftime("%Y-%m-%d %H:%M:%S %z") -}}
+    {%- endif -%}
+{%- endmacro %}

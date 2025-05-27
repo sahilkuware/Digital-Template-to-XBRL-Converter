@@ -1,0 +1,108 @@
+[project]
+name = "mireport"
+version = "1.0.0"
+description = "Converts a filled-in Excel template into an Inline XBRL Report"
+authors = [
+    {name = "Stuart Rowan", email = "stuart.rowan@efrag.org"},
+    {name = "Richard Bössen", email = "richard.boessen@efrag.org"},
+]
+
+dependencies = [
+    "pydantic>=2.10.0",
+    "python-dotenv>=1.0.1",
+    "openpyxl",
+    "flask",
+    "aoix@git+https://code.blinkace.com/xbrl/aoix.git@feature-typed-dimensions",
+    "flask-session",
+    "python-dateutil",
+    "msgpack",
+    "rich",
+    "arelle-release",
+    "ixbrl-viewer",
+    "waitress"
+]
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+
+[project.urls]
+"Source code" = "https://github.com/EFRAG-EU/Digital-Template-to-XBRL-Converter"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+# Allow use of git URLs in dependencies
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mireport"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "isort>=5.13.2",
+    "mypy>=1.0.0",
+    "ruff>=0.1.0",
+    "pre-commit>=3.5.0",
+    "bandit>=1.8.0",
+    "safety>=3.2.9",
+    "types-Werkzeug",
+    "types-python-dateutil",
+    "types-openpyxl"
+]
+
+redis = [
+    "flask-rq>=0.3.2",
+    "RQ==2.3.2",
+    "flask-session[redis]",
+]
+
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+markers = [
+    "integration: marks tests as integration tests",
+]
+addopts = [
+    "-ra -q",
+    "--import-mode=importlib",
+]
+
+[tool.mypy]
+python_version = "3.11"
+plugins = ["pydantic.mypy"]
+ignore_missing_imports = true
+check_untyped_defs = true
+disallow_untyped_defs = true
+exclude = [
+    "^tests/",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+indent-width = 4
+src = ["src"]
+
+[tool.ruff.lint.isort]
+known-local-folder = ["src"]
+
+# These aren't used.
+
+[tool.bandit]
+exclude_dirs = ["tests", "venv", ".env"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 88

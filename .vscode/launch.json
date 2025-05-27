@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Converter with sample data",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "scripts\\parse-and-ixbrl.py",
+            "console": "integratedTerminal",
+            "args": ["digital-templates/VSME-Digital-Template-Sample-1.0.0.xlsx", "output/output.html"]
+        },
+        {
+            "name": "Generate Taxonomy JSON",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "scripts\\update-taxonomy.py",
+            "console": "integratedTerminal",
+            "args": ["src/mireport/data/taxonomies/vsme.json", "VSME-XBRL-Taxonomy-May-2025.zip"]
+        },
+        {
+            "name": "Start Converter Webserver",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "mireport.webapp",
+                "FLASK_DEBUG": "1"
+            },
+            "console": "integratedTerminal",
+            "args": ["run"]
+        }
+    ]
+}

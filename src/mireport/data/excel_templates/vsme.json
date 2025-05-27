@@ -1,0 +1,68 @@
+{
+    "aoix": {
+        "monetary-units": "template_currency",
+        "entity-identifier": "template_reporting_entity_identifier",
+        "entity-scheme": "template_reporting_entity_identifier_scheme"
+    },
+    "entryPoint": "template_reporting_schemaRef",
+    "periods": [
+        {
+            "start": "template_reporting_period_startdate",
+            "end": "template_reporting_period_enddate",
+            "name": "cur"
+        }
+    ],
+    "report": {
+        "entity-name": "template_reporting_entity_name"
+    },
+    "entityIdentifierLabelsToSchemes": {
+        "lei": "http://standards.iso.org/iso/17442",
+        "duns": "https://www.dnb.co.uk/duns-number",
+        "euid": "https://euid.eu/",
+        "permid": "https://permid.org/"
+    },
+    "dataTypesToUnits": {
+        "dtr-types:areaItemType": "utr:ha",
+        "dtr-types:energyItemType": "utr:MWh",
+        "dtr-types:ghgEmissionsItemType": "utr:tCO2e",
+        "dtr-types:massItemType": "utr:t",
+        "dtr-types:percentItemType": "xbrli:pure",
+        "dtr-types:volumeItemType": "utr:m3",
+        "xbrli:decimalItemType": "xbrli:pure"
+    },
+    "conceptsToUnits": {
+        "vsme:TotalWasteGeneratedMass": "utr:t",
+        "vsme:TotalHazardousWasteGeneratedMass": "utr:t",
+        "vsme:TotalNonHazardousWasteGeneratedMass": "utr:t",
+        "vsme:TotalWasteGeneratedVolume": "utr:m3",
+        "vsme:TotalHazardousWasteGeneratedVolume": "utr:m3",
+        "vsme:TotalNonHazardousWasteGeneratedVolume": "utr:m3",
+        "vsme:TotalWasteRecycledReusedAndDirectedToDisposalVolume": "utr:m3"
+    },
+    "unitIdsToMeasures": {
+        "Emissions_per_Monetary": {
+            "numerator": [
+                "tCO2e"
+            ],
+            "denominator": [
+                "EUR"
+            ]
+        }
+    },
+    "cellValuesToTaxonomyLabels": {
+        "Option A (Basic Module only)": "Basic Module (only) [member]",
+        "Option B (Basic Module and Comprehensive Module)": "Basic Module and Comprehensive Module [member]",
+        "private limited liability undertaking": "Private limited liability undertaking [member]",
+        "Sustainability report prepared on a consolidated basis": "Consolidated [member]",
+        "Sustainability report prepared on an individual basis": "Individual [member]",
+        "As an average across the reporting period": "Average during the reporting period [member]",
+        "At the end of the reporting period": "At the end of reporting period [member]",
+        "other (please specify the legal form in the row below)": "Other undertakings legal form [member]",
+        "Asbestos": "Abestos [member]"
+    },
+    "cellUnitReplacements": {
+        "m2": "sqm",
+        "m²": "sqm",
+        "m³": "m3"
+    }
+}

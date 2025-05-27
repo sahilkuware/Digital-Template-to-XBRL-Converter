@@ -1,0 +1,75 @@
+{% extends "base.html.jinja" %}
+{% from "_macros.html.jinja" import download_button %}
+
+{% block title %}Excel-to-XBRL Converter{% endblock %}
+
+{% block content %}
+{% include "_svg.html.jinja" %}
+<div class="flex justify-between items-center">
+    <a href="{{url_for('basic.index')}}" class="inline-block px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+    ← Back to Home
+    </a>
+    <form method="POST" action="{{ url_for('basic.delete_all') }}">
+    <button type="submit" class="px-6 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition">
+    Delete All
+    </button>
+    </form>
+</div>
+
+<div class="mt-8 space-y-8">
+    <!-- Title -->
+    <h2 class="text-3xl font-bold text-center text-gray-800">My Conversions</h2>
+    <!-- Messages Table -->
+    <div class="overflow-x-auto">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Files</h3>
+        <p class="text-sm text-gray-600 mb-4">You can download or delete the converted files here. Files are stored temporarily for {{ format_timedelta(lifetime) }} and will be automatically removed after the session expires.</p>
+        <table class="table-auto w-full border-collapse border border-gray-300 text-sm">
+            <thead class="bg-gray-100">
+                <tr>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Upload details</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Conversion results</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Inline XBRL (Viewer)</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">xBRL-JSON</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Inline XBRL Report Package</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Converted Excel</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for id in conversions %}
+                    {% set conversion = conversions[id] %}
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-4 py-2 text-sm text-gray-800 max-w-xs overflow-hidden text-ellipsis">
+                            <span class="font-medium text-gray-900 block">{{ getUploadFilename(id) }}</span>
+                            <br>
+                            <span class="text-gray-600 text-xs block">Uploaded on: {{ conversion.date }}</span>
+                        </td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <a href="{{url_for('basic.convert', id = id, **request.args)}}" class="block text-center px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+                            View results
+                            </a>
+                        </td>
+                        {% for ftype in ("viewer", "json", "zip", "excel") %}
+                        <td class="border border-gray-300 px-4 py-2">
+                            {{ download_button(
+                                ftype,
+                                url_for('basic.downloadFile', id=id, ftype=ftype),
+                                conversion.successful is true,
+                            ) }}
+                        </td>
+                        {% endfor %}
+                        <td class="border border-gray-300 px-4 py-2">
+                            <form method="POST" action="{{ url_for('basic.delete', id = id) }}">
+                                <button type="submit" class="px-6 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition">
+                                Delete conversion
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

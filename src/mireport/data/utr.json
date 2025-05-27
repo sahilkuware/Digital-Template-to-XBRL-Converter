@@ -1,0 +1,2981 @@
+{
+  "utr": [
+    {
+      "definition": "Ampere",
+      "itemType": "electricCurrentItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "A",
+      "unitId": "A",
+      "unitName": "Ampere"
+    },
+    {
+      "definition": "United Arab Emirates dirham",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u062f.\u0625",
+      "unitId": "AED",
+      "unitName": "U.A.E. dirham"
+    },
+    {
+      "definition": "Afghan afghani",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u060b",
+      "unitId": "AFN",
+      "unitName": "Afghan afghani"
+    },
+    {
+      "definition": "Albanian lek",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "L",
+      "unitId": "ALL",
+      "unitName": "Albanian lek"
+    },
+    {
+      "definition": "Armenian dram",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u058f",
+      "unitId": "AMD",
+      "unitName": "Armenian dram"
+    },
+    {
+      "definition": "Netherlands Antillean guilder",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "NA\u0192",
+      "unitId": "ANG",
+      "unitName": "Netherlands Antillean guilder"
+    },
+    {
+      "definition": "Angolan kwanza",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Kz",
+      "unitId": "AOA",
+      "unitName": "Angolan kwanza"
+    },
+    {
+      "definition": "Argentine peso",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "ARS",
+      "unitName": "Argentine peso"
+    },
+    {
+      "definition": "Australian dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "AUD",
+      "unitName": "Australian dollar"
+    },
+    {
+      "definition": "Aruban florin",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u0192",
+      "unitId": "AWG",
+      "unitName": "Aruban florin"
+    },
+    {
+      "definition": "Azerbaijani manat",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20bc",
+      "unitId": "AZN",
+      "unitName": "Azerbaijani manat"
+    },
+    {
+      "definition": "An ampere hour or amp hour is a unit of electric charge, equal to the charge transferred by a steady current of one ampere flowing for one hour.",
+      "itemType": "electricChargeItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "Ah",
+      "unitId": "Ah",
+      "unitName": "Ampere Hours"
+    },
+    {
+      "definition": "8 adjacent bits of Memory per IEEE 1541-2002",
+      "itemType": "memoryItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "B",
+      "unitId": "B",
+      "unitName": "Byte"
+    },
+    {
+      "definition": "Bosnia and Herzegovina convertible mark",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "KM",
+      "unitId": "BAM",
+      "unitName": "Bosnia and Herzegovina convertible mark"
+    },
+    {
+      "definition": "Barbados dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "BBD",
+      "unitName": "Barbados dollar"
+    },
+    {
+      "definition": "Bangladeshi taka",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u09f3",
+      "unitId": "BDT",
+      "unitName": "Bangladeshi taka"
+    },
+    {
+      "definition": "Bulgarian lev",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u043b\u0432",
+      "unitId": "BGN",
+      "unitName": "Bulgarian lev"
+    },
+    {
+      "definition": "Bahraini dinar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": ".\u062f.\u0628",
+      "unitId": "BHD",
+      "unitName": "Bahraini dinar"
+    },
+    {
+      "definition": "Burundian franc",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "FBu",
+      "unitId": "BIF",
+      "unitName": "Burundian franc"
+    },
+    {
+      "definition": "Bermudian dollar (customarily known as Bermuda dollar)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "BMD",
+      "unitName": "Bermuda Dollar"
+    },
+    {
+      "definition": "Brunei dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "BND",
+      "unitName": "Brunei dollar"
+    },
+    {
+      "definition": "Boliviano",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Bs.",
+      "unitId": "BOB",
+      "unitName": "Boliviano"
+    },
+    {
+      "definition": "Bolivian Mvdol (funds code)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "BOV",
+      "unitName": "Bolivian Mvdol"
+    },
+    {
+      "definition": "Brazilian real",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "R$",
+      "unitId": "BRL",
+      "unitName": "Brazilian real"
+    },
+    {
+      "definition": "Bahamian dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "BSD",
+      "unitName": "Bahamian dollar"
+    },
+    {
+      "definition": "Bhutanese ngultrum",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Ch.",
+      "unitId": "BTN",
+      "unitName": "Bhutanese ngultrum"
+    },
+    {
+      "definition": "Botswana pula",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "P",
+      "unitId": "BWP",
+      "unitName": "Botswana pula"
+    },
+    {
+      "definition": "Belarusian ruble",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Br",
+      "unitId": "BYN",
+      "unitName": "Belarusian ruble"
+    },
+    {
+      "definition": "Belarusian ruble",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Br",
+      "unitId": "BYR",
+      "unitName": "Belarusian ruble"
+    },
+    {
+      "definition": "Belize dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "BZD",
+      "unitName": "Belize dollar"
+    },
+    {
+      "definition": "The bar is a metric unit of pressure, but is not approved as part of the International System of Units (SI). It is defined as exactly equal to 100000 Pa, which is slightly less than the current average atmospheric pressure on Earth at sea level.",
+      "itemType": "pressureItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "bar",
+      "unitId": "Bar",
+      "unitName": "Bar"
+    },
+    {
+      "definition": "One thousand million cubic feet",
+      "itemType": "volumeItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "Bcf",
+      "unitId": "Bcf",
+      "unitName": "Billions of cubic feet"
+    },
+    {
+      "definition": "Thousand million cubic feet of natural gas equivalent",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "Bcfe",
+      "unitId": "Bcfe",
+      "unitName": "Billion Cubic Foot Equivalent"
+    },
+    {
+      "definition": "Barrel of Oil Equivalent",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "Boe",
+      "unitId": "Boe",
+      "unitName": "Barrel of Oil Equivalent"
+    },
+    {
+      "definition": "British Thermal Unit",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "BTU",
+      "unitId": "Btu",
+      "unitName": "British Thermal Unit"
+    },
+    {
+      "definition": "The coulomb is the International System of Units (SI) unit of electric charge. It is the charge transported by a constant current of one ampere in one second.",
+      "itemType": "electricChargeItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "C",
+      "unitId": "C",
+      "unitName": "Coulomb"
+    },
+    {
+      "definition": "Canadian dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "CAD",
+      "unitName": "Canadian dollar"
+    },
+    {
+      "definition": "Congolese franc",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "CF",
+      "unitId": "CDF",
+      "unitName": "Congolese franc"
+    },
+    {
+      "definition": "WIR Bank (complementary currency)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "CHE",
+      "unitName": "WIR Bank"
+    },
+    {
+      "definition": "Swiss franc",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "SFr",
+      "unitId": "CHF",
+      "unitName": "Swiss franc"
+    },
+    {
+      "definition": "WIR Bank (complementary currency)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "CHW",
+      "unitName": "WIR Bank"
+    },
+    {
+      "definition": "Unidad de Fomento (funds code)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "CLF",
+      "unitName": "Unidad de Fomento"
+    },
+    {
+      "definition": "Chilean peso",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "CLP",
+      "unitName": "Chilean peso"
+    },
+    {
+      "definition": "Chinese yuan (renmibi)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u00a5",
+      "unitId": "CNY",
+      "unitName": "Chinese yuan"
+    },
+    {
+      "definition": "Colombian peso",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "COP",
+      "unitName": "Colombian peso"
+    },
+    {
+      "definition": "Unidad de Valor Real",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "COU",
+      "unitName": "Unidad de Valor Real"
+    },
+    {
+      "definition": "Costa Rican colon",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20a1",
+      "unitId": "CRC",
+      "unitName": "Costa Rican colon"
+    },
+    {
+      "definition": "Cuban convertible peso",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "CUC$",
+      "unitId": "CUC",
+      "unitName": "Cuban convertible peso"
+    },
+    {
+      "definition": "Cuban peso",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$MN",
+      "unitId": "CUP",
+      "unitName": "Cuban peso"
+    },
+    {
+      "definition": "Cape Verde escudo",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Esc",
+      "unitId": "CVE",
+      "unitName": "Cape Verde escudo"
+    },
+    {
+      "definition": "Czech koruna",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "K\u010d",
+      "unitId": "CZK",
+      "unitName": "Czech koruna"
+    },
+    {
+      "definition": "Calorie",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "Cal",
+      "unitId": "Cal",
+      "unitName": "Calorie"
+    },
+    {
+      "definition": "A temperature scale based on 0\u00b0 for the freezing point of water and 100\u00b0 for the boiling point of water at 1 atm pressure.",
+      "itemType": "temperatureItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "\u00b0C",
+      "unitId": "Celsius",
+      "unitName": "Celsius"
+    },
+    {
+      "definition": "Day of 24 hours. Use only as a denominator because durationItemType is not numeric and has no units.",
+      "itemType": "durationItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "d",
+      "unitId": "D",
+      "unitName": "Day"
+    },
+    {
+      "definition": "Djiboutian franc",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Fdj",
+      "unitId": "DJF",
+      "unitName": "Djiboutian franc"
+    },
+    {
+      "definition": "Danish krone",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "kr",
+      "unitId": "DKK",
+      "unitName": "Danish krone"
+    },
+    {
+      "definition": "Dominican peso",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "DOP",
+      "unitName": "Dominican peso"
+    },
+    {
+      "definition": "Algerian dinar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u062f\u062c",
+      "unitId": "DZD",
+      "unitName": "Algerian dinar"
+    },
+    {
+      "definition": "The degree is a measurement of a plane angle, defined so that a full rotation is 360 degrees. In XBRL the degree is reported in a decimal format.",
+      "itemType": "planeAngleItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "\u00b0",
+      "unitId": "Degree",
+      "unitName": "Degree"
+    },
+    {
+      "definition": "Estonian kroon",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "EEK",
+      "unitName": "Estonian kroon"
+    },
+    {
+      "definition": "Egyptian pound",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u062c.\u0645.",
+      "unitId": "EGP",
+      "unitName": "Egyptian pound"
+    },
+    {
+      "definition": "Eritrean nakfa",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Nfk",
+      "unitId": "ERN",
+      "unitName": "Eritrean nakfa"
+    },
+    {
+      "definition": "Ethiopian birr",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Br",
+      "unitId": "ETB",
+      "unitName": "Ethiopian birr"
+    },
+    {
+      "definition": "Euro",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20ac",
+      "unitId": "EUR",
+      "unitName": "Euro"
+    },
+    {
+      "definition": "CO2 equivalent emissions per monetary unit (\"Emissions intensity\")",
+      "denominatorItemType": "monetaryItemType",
+      "itemType": "ghgEmissionsPerMonetaryItemType",
+      "nsDenominatorItemType": "http://www.xbrl.org/2003/instance",
+      "nsNumeratorItemType": "http://www.xbrl.org/2009/utr",
+      "numeratorItemType": "ghgEmissionsItemType",
+      "status": "REC",
+      "unitId": "Emissions_per_Monetary",
+      "unitName": "Emissions/Monetary"
+    },
+    {
+      "definition": "Energy consumed per monetary unit (\"Energy intensity\")",
+      "denominatorItemType": "monetaryItemType",
+      "itemType": "energyPerMonetaryItemType",
+      "nsDenominatorItemType": "http://www.xbrl.org/2003/instance",
+      "nsNumeratorItemType": "http://www.xbrl.org/2009/utr",
+      "numeratorItemType": "energyItemType",
+      "status": "REC",
+      "unitId": "Energy_per_Monetary",
+      "unitName": "Energy/Monetary"
+    },
+    {
+      "definition": "Fahrenheit is a unit of measure for temperature defined by two fixed points: the temperature at which water freezes into ice is defined as 32 \u00b0F, and the boiling point of water is defined to be 212 \u00b0F, a 180 \u00b0F separation, as defined at sea level and standard atmospheric pressure.",
+      "itemType": "temperatureItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "\u00b0F",
+      "unitId": "F",
+      "unitName": "Fahrenheit"
+    },
+    {
+      "definition": "Fiji dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "FJD",
+      "unitName": "Fiji dollar"
+    },
+    {
+      "definition": "Falkland Islands pound",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u00a3",
+      "unitId": "FKP",
+      "unitName": "Falkland Islands pound"
+    },
+    {
+      "definition": "Gigabytes of Memory per IEEE 1541-2002",
+      "itemType": "memoryItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "GB",
+      "unitId": "GB",
+      "unitName": "Gigabyte"
+    },
+    {
+      "definition": "Great Britain Pound sterling",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u00a3",
+      "unitId": "GBP",
+      "unitName": "Pound sterling"
+    },
+    {
+      "definition": "Georgian lari",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u10da",
+      "unitId": "GEL",
+      "unitName": "Georgian lari"
+    },
+    {
+      "definition": "Ghanaian cedi",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "GH\u20b5",
+      "unitId": "GHS",
+      "unitName": "Ghanaian cedi"
+    },
+    {
+      "definition": "Gibraltar pound",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u00a3",
+      "unitId": "GIP",
+      "unitName": "Gibraltar pound"
+    },
+    {
+      "definition": "Billion Joules",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "GJ",
+      "unitId": "GJ",
+      "unitName": "Gigajoule"
+    },
+    {
+      "definition": "Gambian dalasi",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "D",
+      "unitId": "GMD",
+      "unitName": "Gambian dalasi"
+    },
+    {
+      "definition": "Guinean franc",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "FG",
+      "unitId": "GNF",
+      "unitName": "Guinean franc"
+    },
+    {
+      "definition": "One thousand million US tons",
+      "itemType": "massItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "GT",
+      "unitId": "GT",
+      "unitName": "Billion Tons"
+    },
+    {
+      "definition": "Guatemalan quetzal",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Q",
+      "unitId": "GTQ",
+      "unitName": "Guatemalan quetzal"
+    },
+    {
+      "definition": "One thousand million volts",
+      "itemType": "voltageItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "GV",
+      "unitId": "GV",
+      "unitName": "Gigavolt"
+    },
+    {
+      "definition": "Thousand Million Watts",
+      "itemType": "powerItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "GW",
+      "unitId": "GW",
+      "unitName": "Gigawatt"
+    },
+    {
+      "definition": "Gigawatt-Month assuming 730 hours per month",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "GW-M",
+      "unitId": "GWM",
+      "unitName": "Gigawatt-Month"
+    },
+    {
+      "definition": "Gigawatt-Hour",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "GWh",
+      "unitId": "GWh",
+      "unitName": "Gigawatt-Hour"
+    },
+    {
+      "definition": "Guyanese dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "GYD",
+      "unitName": "Guyanese dollar"
+    },
+    {
+      "definition": "Thousand Million Tonnes (Metric Tonnes, Metric Tons)",
+      "itemType": "massItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "Gt",
+      "unitId": "Gt",
+      "unitName": "Gigatonne"
+    },
+    {
+      "definition": "Carbon dioxide equivalent is calculated for emissions other than carbon dioxide according to their global warming potential (GWP). As estimates of GWP may change over time, the UTR defines no fixed conversion rates.",
+      "itemType": "ghgEmissionsItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "GtCO2e",
+      "unitId": "GtCO2e",
+      "unitName": "Thousand million metric tonnes of CO2 equivalent"
+    },
+    {
+      "definition": "Hour of 60 minutes. Use only as a denominator because durationItemType is not numeric and has no units.",
+      "itemType": "durationItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "h",
+      "unitId": "H",
+      "unitName": "Hour"
+    },
+    {
+      "definition": "Hong Kong dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "HKD",
+      "unitName": "Hong Kong dollar"
+    },
+    {
+      "definition": "Honduran lempira",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "L",
+      "unitId": "HNL",
+      "unitName": "Honduran lempira"
+    },
+    {
+      "definition": "Croatian kuna",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "kn",
+      "unitId": "HRK",
+      "unitName": "Croatian kuna"
+    },
+    {
+      "definition": "Haitian gourde",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "G",
+      "unitId": "HTG",
+      "unitName": "Haitian gourde"
+    },
+    {
+      "definition": "Hungarian forint",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Ft",
+      "unitId": "HUF",
+      "unitName": "Hungarian forint"
+    },
+    {
+      "definition": "Frequency or Number of Cycles per Second",
+      "itemType": "frequencyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "Hz",
+      "unitId": "Hz",
+      "unitName": "Hertz"
+    },
+    {
+      "definition": "Indonesian rupiah",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Rp",
+      "unitId": "IDR",
+      "unitName": "Indonesian rupiah"
+    },
+    {
+      "definition": "Israeli new sheqel",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20aa",
+      "unitId": "ILS",
+      "unitName": "Israeli new sheqel"
+    },
+    {
+      "definition": "Indian rupee",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20a8",
+      "unitId": "INR",
+      "unitName": "Indian rupee"
+    },
+    {
+      "definition": "Iraqi dinar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u062f.\u0639",
+      "unitId": "IQD",
+      "unitName": "Iraqi dinar"
+    },
+    {
+      "definition": "Iranian rial",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\ufdfc",
+      "unitId": "IRR",
+      "unitName": "Iranian rial"
+    },
+    {
+      "definition": "Icelandic kr\u00f3na",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "kr",
+      "unitId": "ISK",
+      "unitName": "Icelandic kr\u00f3na"
+    },
+    {
+      "definition": "Joule",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "J",
+      "unitId": "J",
+      "unitName": "Joule"
+    },
+    {
+      "definition": "Jamaican dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "JMD",
+      "unitName": "Jamaican dollar"
+    },
+    {
+      "definition": "Jordanian dinar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "JD",
+      "unitId": "JOD",
+      "unitName": "Jordanian dinar"
+    },
+    {
+      "definition": "Japanese yen",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u00a5",
+      "unitId": "JPY",
+      "unitName": "Japanese yen"
+    },
+    {
+      "definition": "The kelvin is a unit of measure for temperature based upon an absolute scale. It is one of the seven base units in the International System of Units (SI) and is assigned the unit symbol K. The Kelvin scale is an absolute, thermodynamic temperature scale using as its null point absolute zero, the temperature at which all thermal motion ceases in the classical description of thermodynamics. The kelvin is defined as the fraction \u200a1\u2044273.16 of the thermodynamic temperature of the triple point of water (exactly 0.01 \u00b0C or 32.018 \u00b0F). In other words, it is defined such that the triple point of water is exactly 273.16 K.",
+      "itemType": "temperatureItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "K",
+      "unitId": "K",
+      "unitName": "Kelvin"
+    },
+    {
+      "definition": "Kenyan shilling",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Ksh",
+      "unitId": "KES",
+      "unitName": "Kenyan shilling"
+    },
+    {
+      "definition": "Kyrgyzstani som",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u0441\u043e\u043c",
+      "unitId": "KGS",
+      "unitName": "Kyrgyzstani som"
+    },
+    {
+      "definition": "Cambodian riel",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u17db",
+      "unitId": "KHR",
+      "unitName": "Cambodian riel"
+    },
+    {
+      "definition": "Comoro franc",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20a3",
+      "unitId": "KMF",
+      "unitName": "Comoro franc"
+    },
+    {
+      "definition": "North Korean won",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20a9",
+      "unitId": "KPW",
+      "unitName": "North Korean won"
+    },
+    {
+      "definition": "South Korean won",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20a9",
+      "unitId": "KRW",
+      "unitName": "South Korean won"
+    },
+    {
+      "definition": "Kuwaiti dinar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u062f.\u0643",
+      "unitId": "KWD",
+      "unitName": "Kuwaiti dinar"
+    },
+    {
+      "definition": "Cayman Islands dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "KYD",
+      "unitName": "Cayman Islands dollar"
+    },
+    {
+      "definition": "Kazakhstani tenge",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20b8",
+      "unitId": "KZT",
+      "unitName": "Kazakhstani tenge"
+    },
+    {
+      "definition": "Lao kip",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20ad",
+      "unitId": "LAK",
+      "unitName": "Lao kip"
+    },
+    {
+      "definition": "Lebanese pound",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "LL",
+      "unitId": "LBP",
+      "unitName": "Lebanese pound"
+    },
+    {
+      "definition": "Sri Lanka rupee",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u0dbb\u0dd4",
+      "unitId": "LKR",
+      "unitName": "Sri Lanka rupee"
+    },
+    {
+      "definition": "Liberian dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "LRD",
+      "unitName": "Liberian dollar"
+    },
+    {
+      "definition": "Lesotho loti",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "M",
+      "unitId": "LSL",
+      "unitName": "Lesotho loti"
+    },
+    {
+      "definition": "Lithuanian litas",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Lt",
+      "unitId": "LTL",
+      "unitName": "Lithuanian litas"
+    },
+    {
+      "definition": "Latvian lats",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Ls",
+      "unitId": "LVL",
+      "unitName": "Latvian lats"
+    },
+    {
+      "definition": "Libyan dinar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u0644.\u062f",
+      "unitId": "LYD",
+      "unitName": "Libyan dinar"
+    },
+    {
+      "definition": "Gregorian calendar month of 30.41 days. Use only as a denominator because durationItemType is not numeric and has no        units.",
+      "itemType": "durationItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "mo",
+      "unitId": "M",
+      "unitName": "Month"
+    },
+    {
+      "definition": "Moroccan dirham",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u062f.\u0645.",
+      "unitId": "MAD",
+      "unitName": "Moroccan dirham"
+    },
+    {
+      "definition": "Megabytes of Memory per IEEE 1541-2002",
+      "itemType": "memoryItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "MB",
+      "unitId": "MB",
+      "unitName": "Megabyte"
+    },
+    {
+      "definition": "Thousands of Barrels (of Oil)",
+      "itemType": "volumeItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "MBbls",
+      "unitId": "MBbls",
+      "unitName": "Thousand Barrels"
+    },
+    {
+      "definition": "Thousand Barrels of Oil Equivalent",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "MBoe",
+      "unitId": "MBoe",
+      "unitName": "Thousand Barrels of Oil Equivalent"
+    },
+    {
+      "definition": "Moldovan leu",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "MDL",
+      "unitName": "Moldovan leu"
+    },
+    {
+      "definition": "Malagasy ariary",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Ar",
+      "unitId": "MGA",
+      "unitName": "Malagasy ariary"
+    },
+    {
+      "definition": "Million Joules",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "MJ",
+      "unitId": "MJ",
+      "unitName": "Megajoule"
+    },
+    {
+      "definition": "Macedonian denar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u0434\u0435\u043d",
+      "unitId": "MKD",
+      "unitName": "Macedonian denar"
+    },
+    {
+      "definition": "Minute of 60 seconds. Use only as a denominator because durationItemType is not numeric and has no        units.",
+      "itemType": "durationItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "m",
+      "unitId": "MM",
+      "unitName": "Minute"
+    },
+    {
+      "definition": "Millions of BTU",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "MMBTU",
+      "unitId": "MMBTU",
+      "unitName": "Millions of BTU"
+    },
+    {
+      "definition": "Millions of Barrels (of Oil)",
+      "itemType": "volumeItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "MMBbls",
+      "unitId": "MMBbls",
+      "unitName": "Million Barrels"
+    },
+    {
+      "definition": "Millions of Barrels of Oil Equivalent",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "MMBoe",
+      "unitId": "MMBoe",
+      "unitName": "Millions of Barrels of Oil Equivalent"
+    },
+    {
+      "definition": "Myanma kyat",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "K",
+      "unitId": "MMK",
+      "unitName": "Myanma kyat"
+    },
+    {
+      "definition": "Millions of Cubic Feet",
+      "itemType": "volumeItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "MMcf",
+      "unitId": "MMcf",
+      "unitName": "Millions Cubic Feet"
+    },
+    {
+      "definition": "Million cubic feet of natural gas equivalent",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "MMcfe",
+      "unitId": "MMcfe",
+      "unitName": "Million Cubic Foot Equivalent"
+    },
+    {
+      "definition": "Mongolian tugrik",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20ae",
+      "unitId": "MNT",
+      "unitName": "Mongolian tugrik"
+    },
+    {
+      "definition": "Macanese pataca",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "MOP$",
+      "unitId": "MOP",
+      "unitName": "Macanese pataca"
+    },
+    {
+      "definition": "Ouguiya (Mauritania)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "UM",
+      "unitId": "MRO",
+      "unitName": "Mauritanian ouguiya"
+    },
+    {
+      "definition": "One million US tons",
+      "itemType": "massItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "MT",
+      "unitId": "MT",
+      "unitName": "Million Tons"
+    },
+    {
+      "definition": "Mauritian rupee",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20a8",
+      "unitId": "MUR",
+      "unitName": "Mauritian rupee"
+    },
+    {
+      "definition": "One million volts",
+      "itemType": "voltageItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "MV",
+      "unitId": "MV",
+      "unitName": "Megavolt"
+    },
+    {
+      "definition": "A megavolt-ampere (MVA) is the unit used for the apparent power in an electrical circuit, equal to the product of root-mean-square (RMS) voltage and RMS current. In direct current (DC) circuits, this product is equal to the real power (active power) in watts. Volt-amperes are useful only in the context of alternating current (AC) circuits.",
+      "itemType": "powerItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "MVA",
+      "unitId": "MVA",
+      "unitName": "MegaVolt-ampere"
+    },
+    {
+      "definition": "Maldivian rufiyaa",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Rf.",
+      "unitId": "MVR",
+      "unitName": "Maldivian rufiyaa"
+    },
+    {
+      "definition": "Million Watts",
+      "itemType": "powerItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "MW",
+      "unitId": "MW",
+      "unitName": "Megawatt"
+    },
+    {
+      "definition": "Malawian kwacha",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "MK",
+      "unitId": "MWK",
+      "unitName": "Malawian kwacha"
+    },
+    {
+      "definition": "Megawatt-Month assuming 730 hours per month",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "MW-M",
+      "unitId": "MWM",
+      "unitName": "Megawatt-Month"
+    },
+    {
+      "definition": "Megawatt-Day is used to measure energy generated in one day by a power-plant. Is commonly used to define fuel-burnup. A commonly used measure of fuel burnup is the fission energy release per unit mass of fuel.",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "MWd",
+      "unitId": "MWd",
+      "unitName": "Megawatt-Day"
+    },
+    {
+      "definition": "Megawatt-Hour",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "MWh",
+      "unitId": "MWh",
+      "unitName": "Megawatt-Hour"
+    },
+    {
+      "definition": "Mexican peso",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "MXN",
+      "unitName": "Mexican peso"
+    },
+    {
+      "definition": "Mexican Unidad de Inversion (UDI) (funds code)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "MXV",
+      "unitName": "Mexican UDI"
+    },
+    {
+      "definition": "Malaysian ringgit",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "RM",
+      "unitId": "MYR",
+      "unitName": "Malaysian ringgit"
+    },
+    {
+      "definition": "Mozambican metical",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "MT",
+      "unitId": "MZN",
+      "unitName": "Mozambican metical"
+    },
+    {
+      "definition": "Thousands of Cubic Feet",
+      "itemType": "volumeItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "Mcf",
+      "unitId": "Mcf",
+      "unitName": "Thousands Cubic Feet"
+    },
+    {
+      "definition": "Thousand Cubic Foot Equivalent",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "Mcfe",
+      "unitId": "Mcfe",
+      "unitName": "Thousand Cubic Foot Equivalent"
+    },
+    {
+      "definition": "Monetary Unit / Anything",
+      "denominatorItemType": "decimalItemType",
+      "itemType": "perUnitItemType",
+      "nsDenominatorItemType": "http://www.xbrl.org/2003/instance",
+      "nsNumeratorItemType": "http://www.xbrl.org/2003/instance",
+      "numeratorItemType": "monetaryItemType",
+      "status": "REC",
+      "unitId": "Monetary_per_Decimal",
+      "unitName": "Monetary/Decimal"
+    },
+    {
+      "definition": "Exchange Rate Expressed as: Monetary Unit / Monetary Unit",
+      "denominatorItemType": "monetaryItemType",
+      "itemType": "pureItemType",
+      "nsDenominatorItemType": "http://www.xbrl.org/2003/instance",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsNumeratorItemType": "http://www.xbrl.org/2003/instance",
+      "numeratorItemType": "monetaryItemType",
+      "status": "REC",
+      "unitId": "Monetary_per_Monetary",
+      "unitName": "Monetary/Monetary"
+    },
+    {
+      "definition": "Monetary Unit / Share",
+      "denominatorItemType": "sharesItemType",
+      "itemType": "perShareItemType",
+      "nsDenominatorItemType": "http://www.xbrl.org/2003/instance",
+      "nsNumeratorItemType": "http://www.xbrl.org/2003/instance",
+      "numeratorItemType": "monetaryItemType",
+      "status": "REC",
+      "unitId": "Monetary_per_Share",
+      "unitName": "Monetary/share"
+    },
+    {
+      "definition": "Million Tonnes (Metric Tonnes, Metric Tons)",
+      "itemType": "massItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "Mt",
+      "unitId": "Mt",
+      "unitName": "Megatonne"
+    },
+    {
+      "definition": "Carbon dioxide equivalent is calculated for emissions other than carbon dioxide according to their global warming potential (GWP). As estimates of GWP may change over time, the UTR defines no fixed conversion rates.",
+      "itemType": "ghgEmissionsItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "MtCO2e",
+      "unitId": "MtCO2e",
+      "unitName": "Million metric tonnes of CO2 equivalent"
+    },
+    {
+      "definition": "In electric power transmission and distribution, Million volt-ampere reactive (Mvar) is a unit by which reactive power is expressed in an AC electric power system. Reactive power is the power that is wasted and not used to do work on the load.",
+      "itemType": "powerItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "Mvar",
+      "unitId": "Mvar",
+      "unitName": "Million Volt-ampere reactive"
+    },
+    {
+      "definition": "The newton is the International System of Units (SI) derived unit of force. One newton is the force needed to accelerate one kilogram of mass at the rate of one metre per second squared in direction of the applied force.",
+      "itemType": "forceItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "N",
+      "unitId": "N",
+      "unitName": "Newton"
+    },
+    {
+      "definition": "Namibian dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "NAD",
+      "unitName": "Namibian dollar"
+    },
+    {
+      "definition": "Nigerian naira",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20a6",
+      "unitId": "NGN",
+      "unitName": "Nigerian naira"
+    },
+    {
+      "definition": "Cordoba oro",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "C$",
+      "unitId": "NIO",
+      "unitName": "Cordoba oro"
+    },
+    {
+      "definition": "Norwegian krone",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "kr",
+      "unitId": "NOK",
+      "unitName": "Norwegian krone"
+    },
+    {
+      "definition": "Nepalese rupee",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20a8",
+      "unitId": "NPR",
+      "unitName": "Nepalese rupee"
+    },
+    {
+      "definition": "New Zealand dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "NZD",
+      "unitName": "New Zealand dollar"
+    },
+    {
+      "definition": "Omani rial",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u0631.\u0639.",
+      "unitId": "OMR",
+      "unitName": "Omani rial"
+    },
+    {
+      "definition": "Panamanian balboa",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "B/.",
+      "unitId": "PAB",
+      "unitName": "Panamanian balboa"
+    },
+    {
+      "definition": "Petabytes of Memory per IEEE 1541-2002",
+      "itemType": "memoryItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "PB",
+      "unitId": "PB",
+      "unitName": "Petabyte"
+    },
+    {
+      "definition": "Peruvian nuevo sol",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "S/",
+      "unitId": "PEN",
+      "unitName": "Peruvian nuevo sol"
+    },
+    {
+      "definition": "Papua New Guinean kina",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "K",
+      "unitId": "PGK",
+      "unitName": "Papua New Guinean kina"
+    },
+    {
+      "definition": "Philippine peso",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20b1",
+      "unitId": "PHP",
+      "unitName": "Philippine peso"
+    },
+    {
+      "definition": "Pakistani rupee",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20a8",
+      "unitId": "PKR",
+      "unitName": "Pakistani rupee"
+    },
+    {
+      "definition": "Polish z\u0142oty",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "z\u0142",
+      "unitId": "PLN",
+      "unitName": "Polish z\u0142oty"
+    },
+    {
+      "definition": "Paraguayan guaran\u00ed",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20b2",
+      "unitId": "PYG",
+      "unitName": "Paraguayan guaran\u00ed"
+    },
+    {
+      "definition": "The pascal is the SI derived unit of pressure used to quantify internal pressure, stress, Young's modulus and ultimate tensile strength. It is defined as one newton per square meter.",
+      "itemType": "pressureItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "Pa",
+      "unitId": "Pa",
+      "unitName": "Pascal"
+    },
+    {
+      "definition": "Gregorian Calendar Quarter (three months). Use only as a denominator because durationItemType is not numeric and has no units.",
+      "itemType": "durationItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "qtr",
+      "unitId": "Q",
+      "unitName": "Quarter"
+    },
+    {
+      "definition": "Qatari rial",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u0631.\u0642",
+      "unitId": "QAR",
+      "unitName": "Qatari rial"
+    },
+    {
+      "definition": "Romanian new leu",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "RON",
+      "unitName": "Romanian new leu"
+    },
+    {
+      "definition": "Serbian dinar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u0434\u0438\u043d",
+      "unitId": "RSD",
+      "unitName": "Serbian dinar"
+    },
+    {
+      "definition": "Russian rouble",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20bd",
+      "unitId": "RUB",
+      "unitName": "Rouble"
+    },
+    {
+      "definition": "Rwandan franc",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "FRw",
+      "unitId": "RWF",
+      "unitName": "Rwandan franc"
+    },
+    {
+      "definition": "Rate",
+      "itemType": "pureItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "unitId": "Rate",
+      "unitName": "Rate"
+    },
+    {
+      "definition": "Second. Use only as a denominator because durationItemType is not numeric and has no        units.",
+      "itemType": "durationItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "s",
+      "unitId": "S",
+      "unitName": "Second"
+    },
+    {
+      "definition": "Saudi riyal",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u0631.\u0633",
+      "unitId": "SAR",
+      "unitName": "Riyal"
+    },
+    {
+      "definition": "Solomon Islands dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "SBD",
+      "unitName": "Solomon Islands dollar"
+    },
+    {
+      "definition": "Seychelles rupee",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "SRe",
+      "unitId": "SCR",
+      "unitName": "Seychelles rupee"
+    },
+    {
+      "definition": "Sudanese pound",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "SDG",
+      "unitName": "Sudanese pound"
+    },
+    {
+      "definition": "Swedish krona/kronor",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "kr",
+      "unitId": "SEK",
+      "unitName": "Swedish krona"
+    },
+    {
+      "definition": "Singapore dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "SGD",
+      "unitName": "Singapore dollar"
+    },
+    {
+      "definition": "Saint Helena pound",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u00a3",
+      "unitId": "SHP",
+      "unitName": "Saint Helena pound"
+    },
+    {
+      "definition": "Sierra Leonean leone",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Le",
+      "unitId": "SLL",
+      "unitName": "Leone"
+    },
+    {
+      "definition": "Somali shilling",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Sh.So",
+      "unitId": "SOS",
+      "unitName": "Somali shilling"
+    },
+    {
+      "definition": "Surinamese dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "SRD",
+      "unitName": "Surinamese dollar"
+    },
+    {
+      "definition": "South Sudanese pound",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "SSP",
+      "unitName": "South Sudanese pound"
+    },
+    {
+      "definition": "S\u00e3o Tom\u00e9 and Pr\u00edncipe dobra",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Db",
+      "unitId": "STD",
+      "unitName": "S\u00e3o Tom\u00e9 and Pr\u00edncipe dobra"
+    },
+    {
+      "definition": "Salvadoran col\u00f3n",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20a1",
+      "unitId": "SVC",
+      "unitName": "Salvadoran col\u00f3n"
+    },
+    {
+      "definition": "Syrian pound",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "LS",
+      "unitId": "SYP",
+      "unitName": "Syrian pound"
+    },
+    {
+      "definition": "Swaziland Lilangeni",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "E",
+      "unitId": "SZL",
+      "unitName": "Lilangeni"
+    },
+    {
+      "definition": "US Ton",
+      "itemType": "massItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "T",
+      "unitId": "T",
+      "unitName": "Ton"
+    },
+    {
+      "definition": "Terabytes of Memory per IEEE 1541-2002",
+      "itemType": "memoryItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "TB",
+      "unitId": "TB",
+      "unitName": "Terabyte"
+    },
+    {
+      "definition": "Thai baht",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u0e3f",
+      "unitId": "THB",
+      "unitName": "Baht"
+    },
+    {
+      "definition": "Trillion Joules",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "TJ",
+      "unitId": "TJ",
+      "unitName": "Terajoule"
+    },
+    {
+      "definition": "Tajikistani somoni",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "TJS",
+      "unitName": "Tajikistani somoni"
+    },
+    {
+      "definition": "Turkmenistani manat",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "TMT",
+      "unitName": "Turkmenistani manat"
+    },
+    {
+      "definition": "Tunisian dinar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u062f.\u062a",
+      "unitId": "TND",
+      "unitName": "Tunisian dinar"
+    },
+    {
+      "definition": "Tongan pa'anga",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "T$",
+      "unitId": "TOP",
+      "unitName": "Pa'anga"
+    },
+    {
+      "definition": "Turkish lira",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20ba",
+      "unitId": "TRY",
+      "unitName": "Turkish lira"
+    },
+    {
+      "definition": "Trinidad and Tobago dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "TTD",
+      "unitName": "Trinidad and Tobago dollar"
+    },
+    {
+      "definition": "Million Million Watts",
+      "itemType": "powerItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "TW",
+      "unitId": "TW",
+      "unitName": "Terawatt"
+    },
+    {
+      "definition": "New Taiwan dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "TWD",
+      "unitName": "New Taiwan dollar"
+    },
+    {
+      "definition": "Terawatt-Hour",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "TWh",
+      "unitId": "TWh",
+      "unitName": "Terawatt-Hour"
+    },
+    {
+      "definition": "Tanzanian shilling",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Tsh",
+      "unitId": "TZS",
+      "unitName": "Tanzanian shilling"
+    },
+    {
+      "definition": "One trillion cubic feet",
+      "itemType": "volumeItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "Tcf",
+      "unitId": "Tcf",
+      "unitName": "Trillions of cubic feet"
+    },
+    {
+      "definition": "Trillion cubic feet of natural gas equivalent",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "Tcfe",
+      "unitId": "Tcfe",
+      "unitName": "Trillion Cubic Foot Equivalent"
+    },
+    {
+      "definition": "Ukrainian hryvnia",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20b4",
+      "unitId": "UAH",
+      "unitName": "Hryvnia"
+    },
+    {
+      "definition": "Ugandan shilling",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "USh",
+      "unitId": "UGX",
+      "unitName": "Ugandan shilling"
+    },
+    {
+      "definition": "United States dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "USD",
+      "unitName": "US Dollar"
+    },
+    {
+      "definition": "United States dollar (next day) (funds code)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "USN",
+      "unitName": "Next Day US Dollar"
+    },
+    {
+      "definition": "United States dollar (same day) (funds code)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "USS",
+      "unitName": "Same Day US Dollar"
+    },
+    {
+      "definition": "Uruguay Peso en Unidades Indexadas (URUIURUI) (funds code)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "UYI",
+      "unitName": "Uruguay Peso en Unidades Indexadas"
+    },
+    {
+      "definition": "Uruguayan peso",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "UYU",
+      "unitName": "Uruguayan peso"
+    },
+    {
+      "definition": "Uzbekistan som",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "UZS",
+      "unitName": "Som"
+    },
+    {
+      "definition": "Electromotive Force",
+      "itemType": "voltageItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "V",
+      "unitId": "V",
+      "unitName": "Volt"
+    },
+    {
+      "definition": "A volt-ampere (VA) is the unit used for the apparent power in an electrical circuit, equal to the product of root-mean-square (RMS) voltage and RMS current. In direct current (DC) circuits, this product is equal to the real power (active power) in watts. Volt-amperes are useful only in the context of alternating current (AC) circuits.",
+      "itemType": "powerItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "VA",
+      "unitId": "VA",
+      "unitName": "Volt-ampere"
+    },
+    {
+      "definition": "Volt-ampere (VA) hours of energy.",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "VAh",
+      "unitId": "VAh",
+      "unitName": "Volt-ampere-hours"
+    },
+    {
+      "definition": "Bol\u00edvar (Bolivarian Republic Of Venezuela)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Bs.",
+      "unitId": "VEB",
+      "unitName": "Venezualan Bolivar"
+    },
+    {
+      "definition": "Bol\u00edvar fuerte (Bolivarian Republic Of Venezuela)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Bs.F",
+      "unitId": "VEF",
+      "unitName": "Venezuelan Bolivar Fuerte"
+    },
+    {
+      "definition": "Vietnamese \u0111\u1ed3ng",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "\u20ab",
+      "unitId": "VND",
+      "unitName": "\u0111\u1ed3ng"
+    },
+    {
+      "definition": "Vanuatu vatu",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "VT",
+      "unitId": "VUV",
+      "unitName": "Vanuatu vatu"
+    },
+    {
+      "definition": "Flow rate, as Volume per Duration",
+      "denominatorItemType": "durationItemType",
+      "itemType": "flowItemType",
+      "nsDenominatorItemType": "http://www.xbrl.org/2003/instance",
+      "nsNumeratorItemType": "http://www.xbrl.org/2009/utr",
+      "numeratorItemType": "volumeItemType",
+      "status": "REC",
+      "unitId": "Volume_per_Duration",
+      "unitName": "Volume/Duration"
+    },
+    {
+      "definition": "Volume consumed per monetary unit (e.g. \"Water intensity\")",
+      "denominatorItemType": "monetaryItemType",
+      "itemType": "volumePerMonetaryItemType",
+      "nsDenominatorItemType": "http://www.xbrl.org/2003/instance",
+      "nsNumeratorItemType": "http://www.xbrl.org/2009/utr",
+      "numeratorItemType": "volumeItemType",
+      "status": "REC",
+      "unitId": "Volume_per_Monetary",
+      "unitName": "Volume/Monetary"
+    },
+    {
+      "definition": "Watt",
+      "itemType": "powerItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "W",
+      "unitId": "W",
+      "unitName": "Watt"
+    },
+    {
+      "definition": "Gregorian Calendar Week. Use only as a denominator because durationItemType is not numeric and has no units.",
+      "itemType": "durationItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "wk",
+      "unitId": "WK",
+      "unitName": "Week"
+    },
+    {
+      "definition": "Samoan tala",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "WS$",
+      "unitId": "WST",
+      "unitName": "Samoan tala"
+    },
+    {
+      "definition": "Watt-Hours of Energy",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "Wh",
+      "unitId": "Wh",
+      "unitName": "Watt-Hours"
+    },
+    {
+      "definition": "CFA franc BEAC",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "XAF",
+      "unitName": "CFA Franc BEAC"
+    },
+    {
+      "definition": "Silver (one troy ounce)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "XAG",
+      "unitName": "Silver"
+    },
+    {
+      "definition": "Gold (one troy ounce)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "XAU",
+      "unitName": "Gold"
+    },
+    {
+      "definition": "European Composite Unit (EURCO) (bond market unit)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "XBA",
+      "unitName": "EURCO"
+    },
+    {
+      "definition": "European Monetary Unit (E.M.U.-6) (bond market unit)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "XBB",
+      "unitName": "E.M.U.-6"
+    },
+    {
+      "definition": "European Unit of Account 9 (E.U.A.-9) (bond market unit)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "XBC",
+      "unitName": "E.U.A.-9"
+    },
+    {
+      "definition": "European Unit of Account 17 (E.U.A.-17) (bond market unit)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "XBD",
+      "unitName": "E.U.A.-17"
+    },
+    {
+      "definition": "East Caribbean dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "XCD",
+      "unitName": "East Caribbean dollar"
+    },
+    {
+      "definition": "Special Drawing Rights",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "XDR",
+      "unitName": "Special Drawing Rights"
+    },
+    {
+      "definition": "UIC franc (special settlement currency)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "XFU",
+      "unitName": "UIC Franc"
+    },
+    {
+      "definition": "CFA Franc BCEAO",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "XOF",
+      "unitName": "CFA Franc BCEAO"
+    },
+    {
+      "definition": "Palladium (one troy ounce)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "XPD",
+      "unitName": "Palladium"
+    },
+    {
+      "definition": "CFP franc",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "XPF",
+      "unitName": "CFP Franc"
+    },
+    {
+      "definition": "Platinum (one troy ounce)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "XPT",
+      "unitName": "Platinum"
+    },
+    {
+      "definition": "Unified System for Regional Compensation (SUCRE)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "Sucre",
+      "unitId": "XSU",
+      "unitName": "SUCRE"
+    },
+    {
+      "definition": "African Development Bank",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "XUA",
+      "unitName": "ADB Unit of Account"
+    },
+    {
+      "definition": "Gregorian calendar year of 365 days. Use only as a denominator because durationItemType is not numeric and has no        units.",
+      "itemType": "durationItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "yr",
+      "unitId": "Y",
+      "unitName": "Year"
+    },
+    {
+      "definition": "Yemeni rial",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "unitId": "YER",
+      "unitName": "Yemeni rial"
+    },
+    {
+      "definition": "South African rand",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "R",
+      "unitId": "ZAR",
+      "unitName": "South African rand"
+    },
+    {
+      "definition": "Zambian kwacha",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "ZK",
+      "unitId": "ZMK",
+      "unitName": "Zambian kwacha"
+    },
+    {
+      "definition": "Zambian kwacha",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "ZK",
+      "unitId": "ZMW",
+      "unitName": "Zambian kwacha"
+    },
+    {
+      "definition": "Zimbabwe Gold (ZIMBABWE)",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "ZiG",
+      "unitId": "ZWG",
+      "unitName": "Zimbabwe Gold"
+    },
+    {
+      "definition": "Zimbabwe dollar",
+      "itemType": "monetaryItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/iso4217",
+      "status": "REC",
+      "symbol": "$",
+      "unitId": "ZWL",
+      "unitName": "Zimbabwe dollar"
+    },
+    {
+      "definition": "Acre",
+      "itemType": "areaItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "a",
+      "unitId": "acre",
+      "unitName": "Acre"
+    },
+    {
+      "definition": "Volume of one acre of surface area to a depth of one foot using a US survey foot",
+      "itemType": "volumeItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "acre ft",
+      "unitId": "aft",
+      "unitName": "Acre-Foot"
+    },
+    {
+      "definition": "The standard atmosphere is a unit of pressure defined as 101325 Pa (1.01325 bar). It is sometimes used as a reference or standard pressure.",
+      "itemType": "pressureItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "atm",
+      "unitId": "atm",
+      "unitName": "Standard Atmosphere"
+    },
+    {
+      "definition": "Barrel (of Oil)",
+      "itemType": "volumeItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "bbl",
+      "unitId": "bbl",
+      "unitName": "Barrel"
+    },
+    {
+      "definition": "US Bushel",
+      "itemType": "volumeItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "bu",
+      "unitId": "bu",
+      "unitName": "Bushel"
+    },
+    {
+      "definition": "One-hundreth of Metre",
+      "itemType": "lengthItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "cm",
+      "unitId": "cm",
+      "unitName": "Centimetre"
+    },
+    {
+      "definition": "Decimetre",
+      "itemType": "lengthItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "dm",
+      "unitId": "dm",
+      "unitName": "Decimetre"
+    },
+    {
+      "definition": "The dekatherm is a unit of energy used to measure natural gas. One dekatherm is equal to 10 therms or one million British thermal units (Btu).",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "dth",
+      "unitId": "dth",
+      "unitName": "Dekatherm"
+    },
+    {
+      "definition": "Twelve Inches",
+      "itemType": "lengthItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "ft",
+      "unitId": "ft",
+      "unitName": "Foot"
+    },
+    {
+      "definition": "Cubic Foot",
+      "itemType": "volumeItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "ft\u00b3",
+      "unitId": "ft3",
+      "unitName": "Cubic Foot"
+    },
+    {
+      "definition": "Foot-Pound Force",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "ft-lb",
+      "unitId": "ft_lb",
+      "unitName": "Foot-Pound"
+    },
+    {
+      "definition": "Gram",
+      "itemType": "massItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "g",
+      "unitId": "g",
+      "unitName": "Gram"
+    },
+    {
+      "definition": "US Gallon",
+      "itemType": "volumeItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "gal",
+      "unitId": "gal",
+      "unitName": "Gallon"
+    },
+    {
+      "definition": "Hectare",
+      "itemType": "areaItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "ha",
+      "unitId": "ha",
+      "unitName": "Hectare"
+    },
+    {
+      "definition": "Horsepower (Foot-pound per Second)",
+      "itemType": "powerItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "hp",
+      "unitId": "hp",
+      "unitName": "Horsepower"
+    },
+    {
+      "definition": "Inch",
+      "itemType": "lengthItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "in",
+      "unitId": "in",
+      "unitName": "Inch"
+    },
+    {
+      "definition": "Kilobytes of Memory per IEEE 1541-2002",
+      "itemType": "memoryItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "kB",
+      "unitId": "kB",
+      "unitName": "Kilobyte"
+    },
+    {
+      "definition": "Thousand Joules",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "kJ",
+      "unitId": "kJ",
+      "unitName": "Kilojoule"
+    },
+    {
+      "definition": "One thousand US tons",
+      "itemType": "massItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "kT",
+      "unitId": "kT",
+      "unitName": "Thousand Tons"
+    },
+    {
+      "definition": "Thousand Volts of Electromotive Force",
+      "itemType": "voltageItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "kV",
+      "unitId": "kV",
+      "unitName": "Kilovolt"
+    },
+    {
+      "definition": "Thousand Watts",
+      "itemType": "powerItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "kW",
+      "unitId": "kW",
+      "unitName": "Kilowatt"
+    },
+    {
+      "definition": "Kilowatt-Hours of Energy",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "kWh",
+      "unitId": "kWh",
+      "unitName": "Kilowatt-Hours"
+    },
+    {
+      "definition": "Kilogram",
+      "itemType": "massItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "kg",
+      "unitId": "kg",
+      "unitName": "Kilogram"
+    },
+    {
+      "definition": "Thousand Metres",
+      "itemType": "lengthItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "km",
+      "unitId": "km",
+      "unitName": "Kilometre"
+    },
+    {
+      "definition": "Thousand Tonnes (Metric Tonnes, Metric Tons)",
+      "itemType": "massItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "kt",
+      "unitId": "kt",
+      "unitName": "Kilotonne"
+    },
+    {
+      "definition": "Carbon dioxide equivalent is calculated for emissions other than carbon dioxide according to their global warming potential (GWP). As estimates of GWP may change over time, the UTR defines no fixed conversion rates.",
+      "itemType": "ghgEmissionsItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "ktCO2e",
+      "unitId": "ktCO2e",
+      "unitName": "Thousand metric tonnes of CO2 equivalent"
+    },
+    {
+      "definition": "Litre",
+      "itemType": "volumeItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "l",
+      "unitId": "l",
+      "unitName": "Litre"
+    },
+    {
+      "definition": "Pound of Mass, as Used in Commerce        (http://en.wikipedia.org/wiki/Pound_(mass)#Use_in_Commerce))",
+      "itemType": "massItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "lb",
+      "unitId": "lb",
+      "unitName": "Pound"
+    },
+    {
+      "definition": "Metre",
+      "itemType": "lengthItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "m",
+      "unitId": "m",
+      "unitName": "Metre"
+    },
+    {
+      "definition": "Cubic Metre",
+      "itemType": "volumeItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "m\u00b3",
+      "unitId": "m3",
+      "unitName": "Cubic Metre"
+    },
+    {
+      "definition": "Millijoules",
+      "itemType": "energyItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "mJ",
+      "unitId": "mJ",
+      "unitName": "mJ"
+    },
+    {
+      "definition": "5280 Feet",
+      "itemType": "lengthItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "mi",
+      "unitId": "mi",
+      "unitName": "Mile"
+    },
+    {
+      "definition": "One-thousandth of Metre",
+      "itemType": "lengthItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "mm",
+      "unitId": "mm",
+      "unitName": "Millimetre"
+    },
+    {
+      "definition": "1.15078 Miles (One Minute of Arc Latitude)",
+      "itemType": "lengthItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "nmi",
+      "unitId": "nmi",
+      "unitName": "Nautical Mile"
+    },
+    {
+      "definition": "US Ounce",
+      "itemType": "massItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "oz",
+      "unitId": "oz",
+      "unitName": "Ounce"
+    },
+    {
+      "definition": "Troy Ounce",
+      "itemType": "massItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "ozt",
+      "unitId": "ozt",
+      "unitName": "Troy Ounce"
+    },
+    {
+      "definition": "The pound per square inch is a unit of pressure or of stress based on avoirdupois units. It is the pressure resulting from a force of one pound-force applied to an area of one square inch.",
+      "itemType": "pressureItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "psi",
+      "unitId": "psi",
+      "unitName": "Pounds Per Square Inch"
+    },
+    {
+      "definition": "Dimensionless (Pure) Number",
+      "itemType": "pureItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/instance",
+      "status": "REC",
+      "unitId": "pure",
+      "unitName": "pure"
+    },
+    {
+      "definition": "The radian is the standard unit of angular measure. The radian is an SI derived unit.",
+      "itemType": "planeAngleItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "rad",
+      "unitId": "rad",
+      "unitName": "Radian"
+    },
+    {
+      "definition": "Unit of Ownership (Stock)",
+      "itemType": "sharesItemType",
+      "nsItemType": "http://www.xbrl.org/2003/instance",
+      "nsUnit": "http://www.xbrl.org/2003/instance",
+      "status": "REC",
+      "unitId": "shares",
+      "unitName": "Share"
+    },
+    {
+      "definition": "Square Foot",
+      "itemType": "areaItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "ft\u00b2",
+      "unitId": "sqft",
+      "unitName": "Square Foot"
+    },
+    {
+      "definition": "Square Kilometer",
+      "itemType": "areaItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "km\u00b2",
+      "unitId": "sqkm",
+      "unitName": "Square km"
+    },
+    {
+      "definition": "Square Metre",
+      "itemType": "areaItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "m\u00b2",
+      "unitId": "sqm",
+      "unitName": "Square metre"
+    },
+    {
+      "definition": "Square Miles",
+      "itemType": "areaItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "mi\u00b2",
+      "unitId": "sqmi",
+      "unitName": "Square Mile"
+    },
+    {
+      "definition": "Square Yard",
+      "itemType": "areaItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "yd\u00b2",
+      "unitId": "sqyd",
+      "unitName": "Square Yard"
+    },
+    {
+      "definition": "Tonne (Metric Tonne, Metric Ton)",
+      "itemType": "massItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "t",
+      "unitId": "t",
+      "unitName": "Tonne"
+    },
+    {
+      "definition": "Carbon dioxide equivalent is calculated for emissions other than carbon dioxide according to their global warming potential (GWP). As estimates of GWP may change over time, the UTR defines no fixed conversion rates.",
+      "itemType": "ghgEmissionsItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "tCO2e",
+      "unitId": "tCO2e",
+      "unitName": "Metric tonnes of CO2 equivalent"
+    },
+    {
+      "definition": "In electric power transmission and distribution, volt-ampere reactive (var) is a unit by which reactive power is expressed in an AC electric power system. Reactive power is the power that is wasted and not used to do work on the load.",
+      "itemType": "powerItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "var",
+      "unitId": "var",
+      "unitName": "Volt-ampere reactive"
+    },
+    {
+      "definition": "Three Feet",
+      "itemType": "lengthItemType",
+      "nsUnit": "http://www.xbrl.org/2009/utr",
+      "status": "REC",
+      "symbol": "yd",
+      "unitId": "yd",
+      "unitName": "Yard"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{% import "_macros.html.jinja" as macros %}
+{{ aoix.namespaces }}
+{{ aoix.schema_ref }}
+{{ aoix.periods }}
+{{ aoix.defaults }}
+{% set ns = namespace(fact_count = 0) %}
+<html xml:lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  {{ '{{ namespaces }}' }}>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{{ entityName | e}} Sustainability Statement</title>
+    </head>
+    <body>
+        <div style="display:none">
+            {{ '{{ header }}' }}
+        </div>
+        <!-- Cover Page -->
+        <div class="page cover-page">
+            <div class="entity-name"><h1>{{ entityName | e}}</h1></div>
+            <div class="report-title"><h1>Sustainability Statements in compliance with the EFRAG Voluntary Sustainability Reporting Standard for non-listed SMEs (VSME)</h1></div>
+            <div class="report-date">Issued {{ now().date() }}</div>
+        </div>
+        <div class="page portrait-page">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Concept</th>
+                        <th>Fact
+                        <br/>
+                        <small>(Reporting period: {{ macros.render_duration_period(report_period) }})</small></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for fact in facts %}
+                    <tr>
+                        <td><span title="{{ fact.concept.qname }}">{{ fact.concept.getStandardLabel() | e }}</span></td>
+                        <td>
+                    {{ macros.render_fact_value(fact) }}{% set ns.fact_count = ns.fact_count + 1 %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- Final Page -->
+        <div class="page footer-page">
+            <p>This report contains {{ ns.fact_count }} XBRL facts ({{ facts | count }} unique facts).</p>
+            <div class="copyright">
+            &#169; 2025 {{ entityName | e }}.
+            </div>
+        </div>
+    </body>
+</html>
+    
