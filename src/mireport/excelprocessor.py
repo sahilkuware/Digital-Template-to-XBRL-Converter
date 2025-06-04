@@ -26,6 +26,7 @@ from mireport.excelutil import (
     EXCEL_PLACEHOLDER_VALUE,
     _CellType,
     _CellValue,
+    excelCellOrCellRangeRef,
     excelCellRangeRef,
     excelCellRef,
     excelDefinedNameRef,
@@ -907,8 +908,8 @@ class ExcelProcessor:
                                     f"Primary item {priItem.definedName.name} spans multiple columns and has multiple values ({values}). Skipping.",
                                     Severity.ERROR,
                                     MessageType.ExcelParsing,
-                                    excel_reference=excelCellRangeRef(
-                                        priItem.worksheet, priItem.cellRange
+                                    excel_reference=excelCellOrCellRangeRef(
+                                        priItem.worksheet, priItem.cellRange, cell
                                     ),
                                 )
                                 broken = True
@@ -976,7 +977,9 @@ class ExcelProcessor:
                                     f"Required typed dimension {tdConcept.qname} not set",
                                     Severity.ERROR,
                                     MessageType.Conversion,
-                                    excel_reference=excelCellRef(td.worksheet, tdCell),
+                                    excel_reference=excelCellOrCellRangeRef(
+                                        td.worksheet, td.cellRange, tdCell
+                                    ),
                                 )
 
                         for ed in explicit_dimensions:
@@ -996,7 +999,9 @@ class ExcelProcessor:
                                     f"Required explicit dimension {edConcept.qname} not set. Cell value '{edValue}'",
                                     Severity.ERROR,
                                     MessageType.Conversion,
-                                    excel_reference=excelCellRef(ed.worksheet, edCell),
+                                    excel_reference=excelCellOrCellRangeRef(
+                                        ed.worksheet, ed.cellRange, edCell
+                                    ),
                                 )
                                 broken = True
                                 continue
@@ -1026,7 +1031,9 @@ class ExcelProcessor:
                                     f"Required explicit dimension {edConcept.qname} not set. Cell value '{edValue}'",
                                     Severity.ERROR,
                                     MessageType.Conversion,
-                                    excel_reference=excelCellRef(ed.worksheet, edCell),
+                                    excel_reference=excelCellOrCellRangeRef(
+                                        ed.worksheet, ed.cellRange, edCell
+                                    ),
                                 )
 
                         if concept.isEnumerationSingle:
