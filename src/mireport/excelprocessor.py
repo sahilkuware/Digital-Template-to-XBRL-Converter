@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import BinaryIO, NamedTuple, Optional
 from xml.sax.saxutils import escape as xml_escape
 
-import dateutil.parser
+from dateutil.parser import parse as parse_datetime
 from openpyxl import Workbook
 from openpyxl.cell.cell import Cell
 from openpyxl.workbook.defined_name import DefinedName
@@ -297,11 +297,10 @@ class ExcelProcessor:
 
                 try:
                     startName = period["start"]
-                    start = self.getSingleStringValue(startName)
-                    startDate = dateutil.parser.parse(start).date()
-                except Exception:
+                    startDate = self.getSingleDateValue(startName)
+                except Exception as e:
                     self._results.addMessage(
-                        f"Excel report must have a valid date for named range {startName}.",
+                        f"Excel report must have a valid date for named range {startName}. Exception: {e}",
                         Severity.ERROR,
                         MessageType.ExcelParsing,
                         excel_reference=excelDefinedNameRef(
@@ -312,11 +311,10 @@ class ExcelProcessor:
 
                 try:
                     endName = period["end"]
-                    end = self.getSingleStringValue(endName)
-                    endDate = dateutil.parser.parse(end).date()
-                except Exception:
+                    endDate = self.getSingleDateValue(endName)
+                except Exception as e:
                     self._results.addMessage(
-                        f"Excel report must have a valid date for named range {endName}.",
+                        f"Excel report must have a valid date for named range {endName}. Exception: {e}",
                         Severity.ERROR,
                         MessageType.ExcelParsing,
                         excel_reference=excelDefinedNameRef(
@@ -1263,26 +1261,11 @@ class ExcelProcessor:
                 continue
 
             if concept.isDate:
-                if isinstance(value, datetime):
-                    value = value.date()
-                elif isinstance(value, date):
-                    pass
-                elif isinstance(value, str):
-                    try:
-                        value = dateutil.parser.parse(value).date()
-                    except Exception:
-                        self._results.addMessage(
-                            f"Unable to parse date from cell value '{value}' for {concept.qname}.",
-                            Severity.ERROR,
-                            MessageType.ExcelParsing,
-                            taxonomy_concept=concept,
-                            excel_reference=excelCellRef(stuff.worksheet, cell),
-                        )
-                        self._definedNameToXBRLMap.pop(dn)
-                        continue
-                else:
+                try:
+                    value = self.getDateFromValue(value)
+                except Exception:
                     self._results.addMessage(
-                        f"Unable to convert cell value '{value}' to a date for {concept.qname}.",
+                        f"Unable to parse date from cell value '{value}' for {concept.qname}.",
                         Severity.ERROR,
                         MessageType.ExcelParsing,
                         taxonomy_concept=concept,
@@ -1600,4 +1583,24 @@ class ExcelProcessor:
                 message,
                 Severity.ERROR,
                 MessageType.Conversion,
+            )
+
+    def getSingleDateValue(self, definedName: DefinedName | str) -> date:
+        value = self.getSingleValue(definedName)
+        return self.getDateFromValue(value)
+
+    def getDateFromValue(self, value: _CellValue) -> date:
+        if isinstance(value, datetime):
+            return value.date()
+        elif isinstance(value, date):
+            return value
+        elif isinstance(value, str):
+            if "-" in value:
+                return date.fromisoformat(value)
+            elif "/" in value:
+                return parse_datetime(value, yearfirst=False, dayfirst=True).date()
+            raise ValueError(f"Unsupported date string: '{value}'")
+        else:
+            raise TypeError(
+                f"Unsupported type for date conversion: {type(value).__name__}"
             )

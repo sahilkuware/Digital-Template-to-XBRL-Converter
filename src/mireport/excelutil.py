@@ -1,4 +1,5 @@
 import re
+from datetime import date, datetime, time
 from pathlib import Path
 from typing import (
     BinaryIO,
@@ -21,7 +22,7 @@ from openpyxl.worksheet.worksheet import Worksheet
 from mireport.exceptions import OpenPyXlRelatedException
 
 _CellType: TypeAlias = ReadOnlyCell | MergedCell | Cell
-_CellValue = int | float | bool | str | None
+_CellValue: TypeAlias = bool | float | int | str | datetime | date | time | None
 
 EXCEL_PLACEHOLDER_VALUE = "#VALUE!"
 
