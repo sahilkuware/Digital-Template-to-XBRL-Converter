@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import BinaryIO, NamedTuple, Optional
 from xml.sax.saxutils import escape as xml_escape
 
+from dateutil.relativedelta import relativedelta
 from dateutil.parser import parse as parse_datetime
 from openpyxl import Workbook
 from openpyxl.cell.cell import Cell
@@ -1554,11 +1555,9 @@ class ExcelProcessor:
         if self._report.hasNamedPeriod(name):
             return name
         # Need to add a new named period for the year.
-        default = self._report.defaultPeriod
-        start_template = default.start
-        end_template = default.end
-        start = date(year, start_template.month, start_template.day)
-        end = date(year, end_template.month, end_template.day)
+        endOfDefault = self._report.defaultPeriod.end
+        end = endOfDefault + relativedelta(year=year)
+        start = end + relativedelta(years=-1, days=+1)
         self._report.addDurationPeriod(name, start, end)
         return name
 
