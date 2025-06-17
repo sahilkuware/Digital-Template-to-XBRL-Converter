@@ -1554,7 +1554,7 @@ class ExcelProcessor:
                 )
 
         if cell_is_percentage:
-            fb.setPercentage(value, decimals, inputIsDecimalForm=True)
+            fb.setPercentageValue(value, decimals, inputIsDecimalForm=True)
         else:
             fb.setDecimals(decimals)
         return

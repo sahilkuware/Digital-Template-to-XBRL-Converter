@@ -347,7 +347,7 @@ class FactBuilder:
         self._value = value
         return self
 
-    def setPercentage(
+    def setPercentageValue(
         self, value: int | float, decimals: int, *, inputIsDecimalForm: bool = True
     ) -> "FactBuilder":
         """Use instead of setValue() when you don't want to think about what to
