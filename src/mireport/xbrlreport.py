@@ -746,7 +746,9 @@ class InlineReport:
         bits: list[dict[str, str | PeriodHolder | Symbol]] = []
 
         def addDict(
-            key: str, value: str | PeriodHolder | Symbol, format_macro: Optional[str] = None
+            key: str,
+            value: str | PeriodHolder | Symbol,
+            format_macro: Optional[str] = None,
         ) -> None:
             d: dict[str, str | PeriodHolder | Symbol] = {"key": key, "value": value}
             if format_macro is not None:
