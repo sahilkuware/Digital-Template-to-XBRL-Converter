@@ -453,16 +453,22 @@ class FactBuilder:
     def validateBoolean(self) -> None:
         if (value := self._value) is None:
             raise InlineReportException(f"Facts must have values {value=}")
-        s_value = str(value).strip().lower()
+
         b_value: bool | None = None
-        if s_value in ("true", "1", "yes"):
-            b_value = True
-        elif s_value in ("false", "0", "no"):
-            b_value = False
+        if isinstance(value, bool):
+            b_value = value
+        else:
+            s_value = str(value).strip().lower()
+            if s_value in {"true", "1", "yes"}:
+                b_value = True
+            elif s_value in {"false", "0", "no"}:
+                b_value = False
+
         if b_value is None:
             raise InlineReportException(
                 f"Unable to determine boolean value for string value {s_value=}"
             )
+
         if b_value is True:
             self.addAspect("transform", "fixed-true")
         else:
