@@ -13,6 +13,7 @@ from itertools import count
 from pathlib import Path
 from typing import NamedTuple, Optional, cast
 from unicodedata import name as unicode_name
+from xml.sax.saxutils import escape as xml_escape
 
 import ixbrltemplates
 from jinja2 import Environment, PackageLoader
@@ -335,12 +336,30 @@ class FactBuilder:
         bits = (self._concept, self._aspects, self._value)
         return f"FactBuilder{bits}"
 
-    def addAspect(self, name: str | QName, value: str | QName) -> "FactBuilder":
-        if not isinstance(name, (str, QName)):
-            raise InlineReportException("name must be (str, QName)")
-        if not isinstance(value, (str, QName)):
-            raise InlineReportException("value must be (str, QName)")
-        self._aspects[name] = value
+    def setExplicitDimension(
+        self, explicitDimension: Concept, explicitDimensionValue: Concept
+    ) -> "FactBuilder":
+        assert explicitDimension.isExplicitDimension, (
+            f"Concept {explicitDimension=} is not an explicit dimension."
+        )
+        self._aspects[explicitDimension.qname] = explicitDimensionValue.qname
+        return self
+
+    def setTypedDimension(
+        self, typedDimension: Concept, typedDimensionValue: _FactValue
+    ) -> "FactBuilder":
+        assert typedDimension.isTypedDimension, (
+            f"Concept {typedDimension=} is not a typed dimension."
+        )
+        assert typedDimension.typedElement is not None, (
+            f"Typed dimension {typedDimension=} has no wrapper element defined."
+        )
+        if isinstance(typedDimensionValue, bool):
+            s_value = str(typedDimensionValue).lower()
+        else:
+            s_value = str(typedDimensionValue)
+        value = f'"<{typedDimension.typedElement}>{xml_escape(s_value)}</{typedDimension.typedElement}>"'
+        self._aspects[typedDimension.qname] = value
         return self
 
     def setValue(self, value: _FactValue) -> "FactBuilder":
@@ -470,9 +489,9 @@ class FactBuilder:
             )
 
         if b_value is True:
-            self.addAspect("transform", "fixed-true")
+            self._aspects["transform"] = "fixed-true"
         else:
-            self.addAspect("transform", "fixed-false")
+            self._aspects["transform"] = "fixed-false"
 
     def validateNumeric(self) -> None:
         if self._concept is None:

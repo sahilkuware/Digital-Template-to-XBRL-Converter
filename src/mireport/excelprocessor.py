@@ -45,7 +45,7 @@ from mireport.taxonomy import (
     getTaxonomy,
     listTaxonomies,
 )
-from mireport.xbrlreport import FactBuilder, InlineReport
+from mireport.xbrlreport import FactBuilder, InlineReport, _FactValue
 
 L = logging.getLogger(__name__)
 
@@ -940,7 +940,7 @@ class ExcelProcessor:
                                         dim
                                     )
                                 ) is not None and dimValue != defaultValue:
-                                    factBuilder.addAspect(dim.qname, dimValue.qname)
+                                    factBuilder.setExplicitDimension(dim, dimValue)
 
                         if concept.isNumeric:
                             unitHolder = None
@@ -976,10 +976,9 @@ class ExcelProcessor:
                             else:
                                 L.info(f"{td.cellRange.bounds=}, {rnum=}")
                             if tdValue is not None:
-                                factBuilder.addAspect(
-                                    tdConcept.qname,
-                                    f'"<{tdConcept.typedElement}>{xml_escape(str(tdValue))}</{tdConcept.typedElement}>"',
-                                )
+                                if not isinstance(tdValue, _FactValue):
+                                    tdValue = str(tdValue)
+                                factBuilder.setTypedDimension(tdConcept, tdValue)
                             else:
                                 broken = True
                                 self._results.addMessage(
@@ -1031,8 +1030,8 @@ class ExcelProcessor:
                                 )
 
                             if memberConcept is not None:
-                                factBuilder.addAspect(
-                                    edConcept.qname, memberConcept.qname
+                                factBuilder.setExplicitDimension(
+                                    edConcept, memberConcept
                                 )
                             else:
                                 broken = True
@@ -1351,7 +1350,7 @@ class ExcelProcessor:
                 for dim, dimValue in presetDimensions.items():
                     defaultValue = self.taxonomy.getDimensionDefault(dim)
                     if defaultValue is None or dimValue != defaultValue:
-                        fb.addAspect(dim.qname, dimValue.qname)
+                        fb.setExplicitDimension(dim, dimValue)
 
                     dimValueDN: Optional[DefinedName] = None
                     if (
