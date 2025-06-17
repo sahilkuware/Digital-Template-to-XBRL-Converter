@@ -736,13 +736,13 @@ class InlineReport:
             lines.append(f'{{{{ schema-ref "{url}" }}}}')
         return "\n".join(lines)
 
-    def getDocumentInformation(self) -> list[dict[str, str | tuple]]:
-        bits: list[dict[str, str | tuple]] = []
+    def getDocumentInformation(self) -> list[dict[str, str | PeriodHolder | Symbol]]:
+        bits: list[dict[str, str | PeriodHolder | Symbol]] = []
 
         def addDict(
-            key: str, value: str | tuple, format_macro: Optional[str] = None
+            key: str, value: str | PeriodHolder | Symbol, format_macro: Optional[str] = None
         ) -> None:
-            d: dict[str, str | tuple] = {"key": key, "value": value}
+            d: dict[str, str | PeriodHolder | Symbol] = {"key": key, "value": value}
             if format_macro is not None:
                 d["format_macro"] = format_macro
             bits.append(d)
