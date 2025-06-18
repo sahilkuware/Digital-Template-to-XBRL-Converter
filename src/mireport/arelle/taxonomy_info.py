@@ -2,7 +2,8 @@ import json
 import logging
 import time
 from collections import defaultdict
-from typing import Any, Optional
+from collections.abc import Iterable
+from typing import Any, Optional, TypeVar
 
 from arelle import XbrlConst
 from arelle.api.Session import Session
@@ -24,6 +25,11 @@ from mireport.arelle.support import (
 from mireport.taxonomy import MEASUREMENT_GUIDANCE_LABEL_ROLE
 
 PLUGIN_NAME = "Taxonomy Information Extractor"
+T = TypeVar("T")
+
+def unique_list(i: Iterable[T]) -> list[T]:
+    # N.B. This maintains insertion order where list(set()) does not.
+    return list(dict.fromkeys(i))
 
 
 def callArelleForTaxonomyInfo(
@@ -249,8 +255,7 @@ class TaxonomyInfoExtractor:
             self.walkChildren(
                 domainConcept, elrUri, domainMemberRelSet, rows, 1, includeUsable=True
             )
-        qnames = sorted({q for _, q, usable in rows if usable})
-        return qnames
+        return unique_list(q for _, q, usable in rows if usable)
 
     def getDomainMembersForEE(
         self, elrUri: str, headUsable: bool, domainConcept: ModelConcept
@@ -265,8 +270,7 @@ class TaxonomyInfoExtractor:
         )
         if headUsable:
             rows.insert(0, (0, domainConcept.qname, headUsable))
-        result: list[QName] = [q for _, q, usable in rows if usable]
-        return result
+        return unique_list(q for _, q, usable in rows if usable)
 
     def getDimensionDefaults(self) -> dict[QName, QName]:
         defaults: dict[QName, QName] = {}
