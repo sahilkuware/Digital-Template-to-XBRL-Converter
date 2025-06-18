@@ -15,7 +15,7 @@ from mireport.exceptions import (
     TaxonomyException,
     UnknownTaxonomyException,
 )
-from mireport.json import loadJsonPackageResource
+from mireport.json import getObject, getResource
 from mireport.utr import UTR
 from mireport.xml import (
     ENUM2_NS,
@@ -766,8 +766,8 @@ def _loadTaxonomyFromFile(bits: dict) -> None:
         for jqname, jconcept in bits["concepts"].items()
         if (qname := qnameMaker.fromString(jqname))
     }
-    with loadJsonPackageResource(data, "utr.json") as payload:
-        utr = UTR.fromDict(payload, qnameMaker=qnameMaker)
+
+    
 
     _TAXONOMIES[entryPoint] = Taxonomy(
         concepts,
@@ -775,5 +775,7 @@ def _loadTaxonomyFromFile(bits: dict) -> None:
         presentation=bits["presentation"],
         dimensions=bits["dimensions"],
         qnameMaker=qnameMaker,
-        utr=utr,
+        utr=UTR.fromDict(
+            getObject(getResource(data, "utr.json")), qnameMaker=qnameMaker
+        ),
     )
