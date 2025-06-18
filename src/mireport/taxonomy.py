@@ -86,6 +86,25 @@ class Concept:
     Represents a concept in an XBRL taxonomy.
     """
 
+    __slots__ = (
+        "qname",
+        "_qnameMaker",
+        "_labels",
+        "_isAbstract",
+        "_isDimension",
+        "_isHypercube",
+        "_isNillable",
+        "_isNumeric",
+        "_taxonomy",
+        "periodType",
+        "dataType",
+        "baseDataType",
+        "typedElement",
+        "_eeDomainMembers",
+        "_eeDomainMemberStrings",
+        "_taxonomy",
+    )
+
     def __init__(self, qnameMaker: QNameMaker, qname: QName, details: dict):
         self.qname = qname
         self._qnameMaker = qnameMaker
