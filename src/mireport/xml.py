@@ -76,7 +76,7 @@ class NamespaceManager:
             return prefix
         elif old_ns is not namespace:
             raise BrokenNamespacePrefixException(
-                f"Namespace prefix clash. Prefix {prefix}, existing namespace {old_ns}, attempted namespace {namespace}."
+                f"Unable to add namespace prefix binding for '{prefix}': existing namespace: '{old_ns}'; attempted namespace '{namespace}'."
             )
         self._prefixToNamespaces[prefix] = namespace
         return prefix
