@@ -27,6 +27,7 @@ from mireport.taxonomy import MEASUREMENT_GUIDANCE_LABEL_ROLE
 PLUGIN_NAME = "Taxonomy Information Extractor"
 T = TypeVar("T")
 
+
 def unique_list(i: Iterable[T]) -> list[T]:
     # N.B. This maintains insertion order where list(set()) does not.
     return list(dict.fromkeys(i))
