@@ -883,7 +883,7 @@ class InlineReport:
                     data=UNCONSTRAINED_REPORT_PACKAGE_JSON,
                 )
                 z.writestr(
-                    zinfo_or_arcname=f"{topLevel}/reports/" + report.filename,
+                    zinfo_or_arcname=f"{topLevel}/reports/{report.filename}",
                     data=report.fileContent,
                 )
             rpBytes = write_bio.getvalue()
