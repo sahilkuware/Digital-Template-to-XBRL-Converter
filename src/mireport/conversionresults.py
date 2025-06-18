@@ -308,7 +308,7 @@ class ProcessingContext:
 
     def __enter__(self) -> "ProcessingContext":
         self.start_time = self.current_section_start_time = perf_counter_ns()
-        self.doMessage(f'Starting: "{self.name}".')
+        self._logProgress(f'Starting: "{self.name}".')
         return self
 
     def __exit__(
@@ -323,28 +323,31 @@ class ProcessingContext:
         swallow_exception: bool = False
         if exc_type is None:
             self.succeeded = True
-            self.doMessage(
+            self._logProgress(
                 f'Finished: "{self.name}" in {format_time_ns(execution_time_ns)}.'
             )
         elif exc_type is not None and issubclass(exc_type, EarlyAbortException):
             self.succeeded = False
-            self.doMessage(
+            self._logProgress(
                 f'Processing of "{self.name}" aborted after {format_time_ns(execution_time_ns)}.',
             )
             swallow_exception = True
         else:
             # add message / log exc_value?
             self.succeeded = False
-            self.doMessage(
+            self._logProgress(
                 f'Processing of "{self.name}" finished abnormally after {format_time_ns(execution_time_ns)}.',
                 Severity.ERROR,
             )
         return swallow_exception
 
-    def doMessage(self, message: str, severity: Severity = Severity.INFO) -> None:
+    def _logProgress(self, message: str, severity: Severity = Severity.INFO) -> None:
         self._resultsBuilder.addMessage(message, severity, MessageType.Progress)
         if self.console:
             print(message)
+
+    def addDevInfoMessage(self, message: str) -> None:
+        self._resultsBuilder.addMessage(message, Severity.INFO, MessageType.DevInfo)
 
     def mark(
         self, newSectionName: Optional[str] = None, additionalInfo: str = ""
@@ -352,12 +355,14 @@ class ProcessingContext:
         now = perf_counter_ns()
         if self.current_section_name is not None:
             execution_time_ns = now - self.current_section_start_time
-            self.doMessage(
+            self._logProgress(
                 f"Finished: [{self.current_section_name}] in {format_time_ns(execution_time_ns)}."
             )
 
         if newSectionName is not None:
             self.current_section_name = newSectionName
             self.current_section_start_time = now
-            self.doMessage(f"Starting: [{self.current_section_name}]. {additionalInfo}")
+            self._logProgress(
+                f"Starting: [{self.current_section_name}]. {additionalInfo}"
+            )
         return
