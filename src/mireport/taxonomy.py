@@ -88,20 +88,19 @@ class Concept:
 
     __slots__ = (
         "qname",
-        "_qnameMaker",
+        "periodType",
+        "dataType",
+        "baseDataType",
+        "typedElement",
         "_labels",
         "_isAbstract",
         "_isDimension",
         "_isHypercube",
         "_isNillable",
         "_isNumeric",
-        "_taxonomy",
-        "periodType",
-        "dataType",
-        "baseDataType",
-        "typedElement",
         "_eeDomainMembers",
         "_eeDomainMemberStrings",
+        "_qnameMaker",
         "_taxonomy",
     )
 
