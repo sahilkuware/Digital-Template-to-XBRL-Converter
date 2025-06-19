@@ -64,7 +64,6 @@ class MessageType(StrEnum):
     @classmethod
     def allExcept(cls, *mtypes: "MessageType") -> set["MessageType"]:
         wanted = cls.all()
-        wanted.remove(cls.DevInfo)
         wanted.difference_update(mtypes)
         return wanted
 
