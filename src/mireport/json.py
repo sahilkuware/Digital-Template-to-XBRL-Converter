@@ -14,7 +14,7 @@ def getObject(source: Traversable) -> Any:
     return loads(source.read_bytes())
 
 
-def getJsonFiles(module: Package) -> Generator:
+def getJsonFiles(module: Package) -> Generator[Traversable, None, None]:
     for f in files(module).iterdir():
         if f.is_file() and f.name.endswith(".json"):
             yield f
