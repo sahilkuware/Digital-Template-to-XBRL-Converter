@@ -468,16 +468,13 @@ class Taxonomy:
             cubeConcepts = frozenset(self.getConcept(c) for c in cubes.keys())
             baseSet = BaseSet(role, cubeConcepts)
             for cubeQname, cubeDetails in cubes.items():
-                d = {}
+                d: dict[str, Any] = {}
                 closed = cubeDetails.pop("xbrldt:closed")
-                d["xbrldt:closed"] = closed
+                d["xbrldt:closed"] = bool(closed)
                 if not closed:
                     open_hcs.append(cubeQname)
-                container = (
-                    DimensionContainerType.Scenario
-                    if cubeDetails.pop("xbrldt:contextElement")
-                    == DimensionContainerType.Scenario.value
-                    else DimensionContainerType.Segment
+                container = DimensionContainerType(
+                    cubeDetails.pop("xbrldt:contextElement")
                 )
                 desired_containers.add(container)
                 d["xbrldt:contextElement"] = container
@@ -508,20 +505,25 @@ class Taxonomy:
             for dimension, domainlist in domainByDimension.items()
         }
         self._hypercubes = frozenset(
-            [c for x in self._baseSets.keys() for c in x.hyperCubes]
+            c for x in self._baseSets.keys() for c in x.hyperCubes
         )
+
         if open_hcs:
-            # Not supported by mireport
+            # Not supported by mireport (aoix doesn't care)
             raise TaxonomyException(
                 f"Taxonomy contains open hypercubes {open_hcs}. Not currently supported"
             )
-        if len(desired_containers) != 1:
-            # Not supported by mireport or aoix
-            raise TaxonomyException(
-                f"Multiple dimension containers specified {desired_containers}. Not currently supported"
-            )
-        else:
-            self._dimensionContainer = desired_containers.pop()
+
+        match len(desired_containers):
+            case 0:
+                pass
+            case 1:
+                self._dimensionContainer = desired_containers.pop()
+            case _:
+                # Not supported by mireport or aoix
+                raise TaxonomyException(
+                    f"Multiple dimension containers specified {desired_containers}. Not currently supported"
+                )
 
     @cache
     def getConcept(self, qname: QName | str) -> Concept:
