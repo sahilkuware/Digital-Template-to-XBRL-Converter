@@ -51,7 +51,7 @@ class NamespaceManager:
 
     def _validate(self, prefix: str, namespace: str) -> _NSPrefixTuple:
         """Validates the namespace and prefix and intern()s them."""
-        if not (namespace and namespace.startswith(("https:", "http:"))):
+        if not (namespace and namespace.startswith(("https://", "http://"))):
             # TODO: use a proper URI / URN validator.
             raise BrokenNamespacePrefixException(
                 f"Namespace does not look valid: {namespace}"
