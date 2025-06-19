@@ -118,11 +118,7 @@ class Concept:
         self._taxonomy: Taxonomy
 
         if (period_type := details.get("periodType")) is not None:
-            self.periodType = (
-                PeriodType.Duration
-                if period_type == PeriodType.Duration.value
-                else PeriodType.Instant
-            )
+            self.periodType = PeriodType(period_type)
         else:
             raise TaxonomyException(
                 f"Concept {self.qname} does not specify a period type."
