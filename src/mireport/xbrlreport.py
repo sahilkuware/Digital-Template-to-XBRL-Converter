@@ -898,12 +898,6 @@ class InlineReport:
         )
 
 
-# get a list of sections
-# attach facts to the sections
-# output sections in label of section order
-#  - for each section, output facts in order defined in section
-
-
 class ReportLayoutOrganiser:
     def __init__(self, taxonomy: Taxonomy, report: InlineReport):
         self.taxonomy = taxonomy
