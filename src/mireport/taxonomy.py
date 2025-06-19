@@ -104,8 +104,8 @@ class Concept:
         "_taxonomy",
     )
 
-    def __init__(self, qnameMaker: QNameMaker, qname: QName, details: dict):
-        self.qname = qname
+    def __init__(self, qnameMaker: QNameMaker, s_qname: str, details: dict):
+        self.qname: QName = qnameMaker.fromString(s_qname)
         self._qnameMaker = qnameMaker
 
         self._labels: dict[str, dict[str, str]] = details["labels"]
@@ -391,7 +391,7 @@ class BaseSet(NamedTuple):
 class Taxonomy:
     def __init__(
         self,
-        concepts: dict[QName, Concept],
+        concepts: dict[str, Concept],
         entryPoint: str,
         presentation: dict[str, dict[str, Any]],
         dimensions: dict[str, dict],
@@ -410,7 +410,7 @@ class Taxonomy:
         # <xbrli:scenario> should be used for all dimensions."
         self._dimensionContainer = DimensionContainerType.Scenario
 
-        self._concepts = concepts
+        self._concepts = {concept.qname: concept for concept in concepts.values()}
         for concept in concepts.values():
             concept._reifyUsingTaxonomy(self)
 
@@ -460,7 +460,7 @@ class Taxonomy:
         open_hcs: list[Concept] = []
         domainByDimension: dict[Concept, list[Concept]] = defaultdict(list)
         for role, cubes in dimensions.items():
-            cubeConcepts = frozenset(self.getConcept(c) for c in cubes.keys())
+            cubeConcepts = frozenset(concepts[c] for c in cubes.keys())
             baseSet = BaseSet(role, cubeConcepts)
             for cubeQname, cubeDetails in cubes.items():
                 d: dict[str, Any] = {}
@@ -474,14 +474,14 @@ class Taxonomy:
                 desired_containers.add(container)
                 d["xbrldt:contextElement"] = container
                 d["primaryItems"] = [
-                    Relationship(role, depth, self.getConcept(qname))
+                    Relationship(role, depth, concepts[qname])
                     for depth, qname in cubeDetails.pop("primaryItems", [])
                 ]
                 for r in d["primaryItems"]:
                     self._lookupBaseSetByPrimaryItem[r.concept].append(baseSet)
                 d["explicitDimensions"] = {
-                    self.getConcept(dimQname): frozenset(
-                        [self.getConcept(member) for member in memberQnameList]
+                    concepts[dimQname]: frozenset(
+                        concepts[member] for member in memberQnameList
                     )
                     for dimQname, memberQnameList in cubeDetails.pop(
                         "explicitDimensions", {}
@@ -490,10 +490,10 @@ class Taxonomy:
                 for dimension, memberList in d["explicitDimensions"].items():
                     domainByDimension[dimension].extend(memberList)
                 d["typedDimensions"] = [
-                    self.getConcept(dimQname)
+                    concepts[dimQname]
                     for dimQname in cubeDetails.pop("typedDimensions", [])
                 ]
-                self._lookupBaseSetByCube[self.getConcept(cubeQname)].append(baseSet)
+                self._lookupBaseSetByCube[concepts[cubeQname]].append(baseSet)
                 self._baseSets[baseSet].append(d)
         self._lookupDomainByDimension: dict[Concept, frozenset[Concept]] = {
             dimension: frozenset(domainlist)
@@ -520,13 +520,11 @@ class Taxonomy:
                     f"Multiple dimension containers specified {desired_containers}. Not currently supported"
                 )
 
-    @cache
     def getConcept(self, qname: QName | str) -> Concept:
         if isinstance(qname, str):
             qname = self._qnameMaker.fromString(qname)
         return self._concepts[qname]
 
-    @cache
     def getConceptForName(self, name: str) -> Concept | None:
         possible = self._lookupConceptsByName.get(name, [])
         match len(possible):
@@ -777,13 +775,11 @@ def _loadTaxonomyFromFile(bits: dict) -> None:
         )
     for prefix, namespace in bits["namespaces"].items():
         qnameMaker.addNamespacePrefix(prefix, namespace)
-    concepts = {
-        qname: Concept(qnameMaker, qname, jconcept)
-        for jqname, jconcept in bits["concepts"].items()
-        if (qname := qnameMaker.fromString(jqname))
-    }
 
-    
+    concepts: dict[str, Concept] = {
+        str_qname: Concept(qnameMaker, str_qname, jconcept)
+        for str_qname, jconcept in bits["concepts"].items()
+    }
 
     _TAXONOMIES[entryPoint] = Taxonomy(
         concepts,
