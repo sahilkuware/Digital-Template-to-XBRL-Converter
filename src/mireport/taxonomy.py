@@ -160,6 +160,8 @@ class Concept:
         return NotImplemented
 
     def __eq__(self, other: object) -> bool:
+        if self is other:
+            return True
         if isinstance(other, Concept):
             return self.qname == other.qname
         return NotImplemented

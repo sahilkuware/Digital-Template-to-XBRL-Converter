@@ -180,6 +180,8 @@ class Fact:
         return (self.concept.qname, self.value, aspects_flattened)
 
     def __eq__(self, other: object) -> bool:
+        if self is other:
+            return True
         if isinstance(other, Fact):
             return self.__key() == other.__key()
         return NotImplemented
