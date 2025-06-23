@@ -169,9 +169,8 @@ class QNameMaker:
 
     def isValidQName(self, /, qname: str) -> bool:
         try:
-            if (q := self._getAndValidateParts(qname)) is None:
-                return False
-            return self.nsManager.prefixIsKnown(q.prefix)
+            self._getAndValidateParts(qname)
+            return True
         except (KeyError, BrokenQNameException):
             return False
 
