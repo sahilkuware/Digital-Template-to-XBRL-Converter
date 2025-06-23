@@ -7,8 +7,7 @@ from dataclasses import dataclass
 from datetime import date, datetime
 from itertools import combinations
 from pathlib import Path
-from typing import BinaryIO, NamedTuple, Optional
-from xml.sax.saxutils import escape as xml_escape
+from typing import BinaryIO, NamedTuple, Optional, Self
 
 from dateutil.parser import parse as parse_datetime
 from dateutil.relativedelta import relativedelta
@@ -100,9 +99,7 @@ class CellAndXBRLMetadataHolder(CellRangeMetadata):
     concept: Concept
 
     @classmethod
-    def fromCellRangeMetadata(
-        cls, holder: CellRangeMetadata, concept: Concept
-    ) -> "CellAndXBRLMetadataHolder":
+    def fromCellRangeMetadata(cls, holder: CellRangeMetadata, concept: Concept) -> Self:
         """
         Create a CellAndXBRLMetadataHolder instance from a CellRangeMetadataHolder and a Concept.
 

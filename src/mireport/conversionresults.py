@@ -4,7 +4,7 @@ from enum import StrEnum
 from functools import cache
 from time import perf_counter_ns
 from types import TracebackType
-from typing import Optional, Type
+from typing import Optional, Self, Type
 
 from mireport.exceptions import EarlyAbortException
 from mireport.taxonomy import Concept
@@ -43,7 +43,7 @@ class Severity(StrEnum):
 
     @classmethod
     @cache
-    def fromLogLevelString(cls, level: str) -> "Severity":
+    def fromLogLevelString(cls, level: str) -> Self:
         lower_lookup = {k.lower(): v for k, v in cls.__members__.items()}
         if (attempt1 := lower_lookup.get(level.lower())) is not None:
             return attempt1
@@ -102,7 +102,7 @@ class Message:
         return " ".join(bits)
 
     @classmethod
-    def fromDict(cls, stuff: dict) -> "Message":
+    def fromDict(cls, stuff: dict) -> Self:
         m = stuff["m"]
         s = Severity[stuff["s"]]
         mt = MessageType[stuff["mt"]]
@@ -137,7 +137,7 @@ class ConversionResults:
         self._conversionSuccessful: bool = conversionSuccessful
 
     @classmethod
-    def fromDict(cls, stuff: dict) -> "ConversionResults":
+    def fromDict(cls, stuff: dict) -> Self:
         id = stuff["id"]
         m = [Message.fromDict(m) for m in stuff["m"]]
         q = stuff["q"]
@@ -296,8 +296,8 @@ class ConversionResultsBuilder(ConversionResults):
 
 
 class ProcessingContext:
-    def __init__(self, resultsBuilder: "ConversionResultsBuilder", name: str) -> None:
-        self._resultsBuilder: "ConversionResultsBuilder" = resultsBuilder
+    def __init__(self, resultsBuilder: ConversionResultsBuilder, name: str) -> None:
+        self._resultsBuilder: ConversionResultsBuilder = resultsBuilder
         self.name: str = name
         self.succeeded: bool = False
         self.start_time: int
@@ -305,7 +305,7 @@ class ProcessingContext:
         self.current_section_name: Optional[str] = None
         self.console = self._resultsBuilder.consoleOutput
 
-    def __enter__(self) -> "ProcessingContext":
+    def __enter__(self) -> Self:
         self.start_time = self.current_section_start_time = perf_counter_ns()
         self._logProgress(f'Starting: "{self.name}".')
         return self

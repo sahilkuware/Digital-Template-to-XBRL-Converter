@@ -1,7 +1,7 @@
 import json
 import logging
 from dataclasses import dataclass
-from typing import Any, MutableMapping, NamedTuple, Optional
+from typing import Any, MutableMapping, NamedTuple, Optional, Self
 
 from arelle.logging.handlers.LogToXmlHandler import LogToXmlHandler
 from arelle.ModelValue import QName
@@ -93,9 +93,7 @@ class ArelleProcessingResult:
                     )
 
     @classmethod
-    def fromLogToXmlHandler(
-        cls, logHandler: LogToXmlHandler
-    ) -> "ArelleProcessingResult":
+    def fromLogToXmlHandler(cls, logHandler: LogToXmlHandler) -> Self:
         json = logHandler.getJson(clearLogBuffer=False)
         logLines = logHandler.getLines(clearLogBuffer=False)
         logHandler.clearLogBuffer()

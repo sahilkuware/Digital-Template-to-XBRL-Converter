@@ -11,7 +11,7 @@ from enum import Enum, StrEnum, auto
 from io import BytesIO
 from itertools import count
 from pathlib import Path
-from typing import NamedTuple, Optional, cast
+from typing import NamedTuple, Optional, Self, cast
 from unicodedata import name as unicode_name
 from xml.sax.saxutils import escape as xml_escape
 
@@ -340,7 +340,7 @@ class FactBuilder:
 
     def setExplicitDimension(
         self, explicitDimension: Concept, explicitDimensionValue: Concept
-    ) -> "FactBuilder":
+    ) -> Self:
         assert explicitDimension.isExplicitDimension, (
             f"Concept {explicitDimension=} is not an explicit dimension."
         )
@@ -349,7 +349,7 @@ class FactBuilder:
 
     def setTypedDimension(
         self, typedDimension: Concept, typedDimensionValue: _FactValue
-    ) -> "FactBuilder":
+    ) -> Self:
         assert typedDimension.isTypedDimension, (
             f"Concept {typedDimension=} is not a typed dimension."
         )
@@ -364,13 +364,13 @@ class FactBuilder:
         self._aspects[typedDimension.qname] = value
         return self
 
-    def setValue(self, value: _FactValue) -> "FactBuilder":
+    def setValue(self, value: _FactValue) -> Self:
         self._value = value
         return self
 
     def setPercentageValue(
         self, value: int | float, decimals: int, *, inputIsDecimalForm: bool = True
-    ) -> "FactBuilder":
+    ) -> Self:
         """Use instead of setValue() when you don't want to think about what to
         do with percentage values.
 
@@ -390,15 +390,15 @@ class FactBuilder:
             self.setDecimals(decimals)
         return self
 
-    def setDecimals(self, decimals: int) -> "FactBuilder":
+    def setDecimals(self, decimals: int) -> Self:
         self._aspects["decimals"] = f'"{decimals}"'
         return self
 
-    def setScale(self, scale: int) -> "FactBuilder":
+    def setScale(self, scale: int) -> Self:
         self._aspects["numeric-scale"] = f'"{scale}"'
         return self
 
-    def setNamedPeriod(self, periodName: str) -> "FactBuilder":
+    def setNamedPeriod(self, periodName: str) -> Self:
         """
         Sets the period for the fact to a named period in the InlineReport.
         """
@@ -409,13 +409,13 @@ class FactBuilder:
         self._aspects["period"] = periodName
         return self
 
-    def setHiddenValue(self, value: str) -> "FactBuilder":
+    def setHiddenValue(self, value: str) -> Self:
         if not value.startswith('"') and not value.endswith('"'):
             value = f'"{value}"'
         self._aspects["hidden-value"] = value
         return self
 
-    def setConcept(self, concept: Concept) -> "FactBuilder":
+    def setConcept(self, concept: Concept) -> Self:
         self._concept = concept
         if not concept.isReportable:
             raise InlineReportException(
@@ -423,11 +423,11 @@ class FactBuilder:
             )
         return self
 
-    def setSimpleUnit(self, measure: QName) -> "FactBuilder":
+    def setSimpleUnit(self, measure: QName) -> Self:
         self._aspects["units"] = measure
         return self
 
-    def setCurrency(self, code: QName | str) -> "FactBuilder":
+    def setCurrency(self, code: QName | str) -> Self:
         if not self._report.taxonomy.UTR.validCurrency(code):
             raise InlineReportException(
                 f"Currency '{code}' does not look like a valid currency code."
@@ -439,7 +439,7 @@ class FactBuilder:
         self,
         numerator: QName | Collection[QName],
         denominator: QName | Collection[QName],
-    ) -> "FactBuilder":
+    ) -> Self:
         if isinstance(numerator, QName):
             numerator = [numerator]
         if isinstance(denominator, QName):
