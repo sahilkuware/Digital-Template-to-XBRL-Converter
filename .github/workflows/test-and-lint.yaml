@@ -24,9 +24,8 @@ jobs:
         with:
           args: format --check .
 
-
   test:
-    name: Run Pytest
+    name: Run Tests Sequentially
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -50,8 +49,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install .[dev] pytest-github-actions-annotate-failures
 
-      - name: Run Pytest
-        run: pytest --tb=short --color=yes
+      - name: Run Unit Tests
+        run: pytest tests/unitTests --tb=short --color=yes
         env:
           PYTEST_GITHUB_ACTIONS_ANNOTATE: "true"
 
+      - name: Run Integration Tests
+        run: pytest tests/integrationTests --tb=short --color=yes
+        env:
+          PYTEST_GITHUB_ACTIONS_ANNOTATE: "true"
