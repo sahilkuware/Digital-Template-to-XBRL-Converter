@@ -139,6 +139,7 @@ class ArelleObjectJSONEncoder(json.JSONEncoder):
                     new_k = str(k)
                 new_value = ArelleObjectJSONEncoder.tidyKeys(obj.pop(k))
                 obj[new_k] = new_value
-        elif isinstance(obj, (tuple, list)):
-            _ = [ArelleObjectJSONEncoder.tidyKeys(item) for item in obj]
+        elif isinstance(obj, (list, tuple)):
+            for item in obj:
+                ArelleObjectJSONEncoder.tidyKeys(item)
         return obj
