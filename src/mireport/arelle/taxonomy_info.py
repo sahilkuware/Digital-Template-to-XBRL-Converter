@@ -215,23 +215,31 @@ class TaxonomyInfoExtractor:
         relSet = self.modelXbrl.relationshipSet(XbrlConst.domainMember, elrUri)
         rows: list[tuple[int, QName, bool | None]] = []
         rows.append((0, root_concept.qname, None))
+        if root_concept not in relSet.rootConcepts:
+            self.cntlr.addToLog(
+                f"WARNING: {elrUri} has no primary items attached to hypercube beyond {root_concept.qname} (no outgoing domain-member relationships).",
+                level=logging.WARNING,
+            )
+            return [(0, root_concept.qname)]
+
         assert root_concept in relSet.rootConcepts, (
-            f"{root_concept} should be in {relSet.rootConcepts}"
+            f"{elrUri} {root_concept} should be in [{', '.join(str(r.qname) for r in relSet.rootConcepts)}]"
         )
         self.walkChildren(root_concept, relSet, rows, 1)
         return [(i, qname) for i, qname, _ in rows]
 
     def getDimensions(
-        self, elrUri: str, hypercube: ModelConcept
+        self, elrUri: str, hypercube: ModelConcept, hypercubeIsClosed: bool
     ) -> list[tuple[ModelConcept, str]]:
         relSet = self.modelXbrl.relationshipSet(XbrlConst.hypercubeDimension, elrUri)
         roots = relSet.rootConcepts
 
         if not roots:
-            self.cntlr.addToLog(
-                f"WARNING: {elrUri} has a hypercube with no dimensions '{hypercube.qname}' (no outgoing hypercube-dimension relationships).",
-                level=logging.WARNING,
-            )
+            if hypercubeIsClosed:
+                self.cntlr.addToLog(
+                    f"WARNING: {elrUri} contains a closed hypercube '{hypercube.qname}' with no dimensions (no outgoing hypercube-dimension relationships).",
+                    level=logging.WARNING,
+                )
             return []
         assert hypercube in roots, f"{hypercube} should be in {roots}"
         assert len(roots) == 1, (
@@ -271,12 +279,12 @@ class TaxonomyInfoExtractor:
             incoming = domainMemberRelSet.toModelObject(domainConcept)
             if 0 == len(outgoing):
                 self.cntlr.addToLog(
-                    f"WARNING: Dimension {explicitDimension.qname} has domain head {domainConcept.qname} with no outgoing domain-member relationships",
+                    f"WARNING: {elrUri} Dimension {explicitDimension.qname} has domain head {domainConcept.qname} with no outgoing domain-member relationships",
                     level=logging.WARNING,
                 )
             if 0 != len(incoming):
                 self.cntlr.addToLog(
-                    f"WARNING: Dimension {explicitDimension.qname} has domain head {domainConcept.qname} with incoming domain-member relationships. How exciting!",
+                    f"WARNING: {elrUri} Dimension {explicitDimension.qname} has domain head {domainConcept.qname} with incoming domain-member relationships. How exciting!",
                     level=logging.WARNING,
                 )
 
@@ -443,7 +451,7 @@ class TaxonomyInfoExtractor:
                                 "xbrldt:closed": rel.isClosed,
                             }
                             for dimension, consecutiveElr in self.getDimensions(
-                                rel.consecutiveLinkrole, concept
+                                rel.consecutiveLinkrole, concept, rel.isClosed
                             ):
                                 if dimension.isExplicitDimension:
                                     cube.setdefault("explicitDimensions", {})[
