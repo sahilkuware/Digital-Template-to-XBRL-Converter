@@ -30,6 +30,12 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="The path of the viewer to be created.",
     )
+    argparser.add_argument(
+        "--ignore-calculation-warnings",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Ignore calculation warnings when validating the report package.",
+    )
     args = argparser.parse_args()
     return args
 
@@ -85,7 +91,9 @@ def main() -> None:
     source = getOrCreateReportPackage(report_path)
 
     if not viewer_path:
-        arelle_result = a.validateReportPackage(source)
+        arelle_result = a.validateReportPackage(
+            source, disableCalculationValidation=args.ignore_calculation_warnings
+        )
     else:
         if viewer_path.is_file():
             print(f"Overwriting {viewer_path}.")
