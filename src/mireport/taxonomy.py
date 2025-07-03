@@ -459,28 +459,34 @@ class Taxonomy:
             list
         )
         desired_containers: set[DimensionContainerType] = set()
-        open_hcs: list[Concept] = []
+        open_hcs: set[Relationship] = set()
         domainByDimension: dict[Concept, list[Concept]] = defaultdict(list)
+
         for role, cubes in dimensions.items():
             cubeConcepts = frozenset(concepts[c] for c in cubes.keys())
             baseSet = BaseSet(role, cubeConcepts)
             for cubeQname, cubeDetails in cubes.items():
+                hc_concept = concepts[cubeQname]
                 d: dict[str, Any] = {}
-                closed = cubeDetails.pop("xbrldt:closed")
-                d["xbrldt:closed"] = bool(closed)
+
+                closed = bool(cubeDetails.pop("xbrldt:closed"))
+                d["xbrldt:closed"] = closed
                 if not closed:
-                    open_hcs.append(cubeQname)
+                    open_hcs.add(Relationship(role, 0, hc_concept))
+
                 container = DimensionContainerType(
                     cubeDetails.pop("xbrldt:contextElement")
                 )
                 desired_containers.add(container)
                 d["xbrldt:contextElement"] = container
+
                 d["primaryItems"] = [
                     Relationship(role, depth, concepts[qname])
                     for depth, qname in cubeDetails.pop("primaryItems", [])
                 ]
                 for r in d["primaryItems"]:
                     self._lookupBaseSetByPrimaryItem[r.concept].append(baseSet)
+
                 d["explicitDimensions"] = {
                     concepts[dimQname]: frozenset(
                         concepts[member] for member in memberQnameList
@@ -491,12 +497,15 @@ class Taxonomy:
                 }
                 for dimension, memberList in d["explicitDimensions"].items():
                     domainByDimension[dimension].extend(memberList)
+
                 d["typedDimensions"] = [
                     concepts[dimQname]
                     for dimQname in cubeDetails.pop("typedDimensions", [])
                 ]
-                self._lookupBaseSetByCube[concepts[cubeQname]].append(baseSet)
+
+                self._lookupBaseSetByCube[hc_concept].append(baseSet)
                 self._baseSets[baseSet].append(d)
+
         self._lookupDomainByDimension: dict[Concept, frozenset[Concept]] = {
             dimension: frozenset(domainlist)
             for dimension, domainlist in domainByDimension.items()
@@ -507,9 +516,17 @@ class Taxonomy:
 
         if open_hcs:
             # Not supported by mireport (aoix doesn't care)
-            raise TaxonomyException(
-                f"Taxonomy contains open hypercubes {open_hcs}. Not currently supported"
+            te = TaxonomyException(
+                f"Unsupported taxonomy: contains ({len(open_hcs)}) open hypercubes."
             )
+            oc_str = "\n".join(
+                f"{role}\n\t{c.qname}"
+                for role, c in sorted(
+                    ((role, c) for role, _, c in open_hcs),
+                )
+            )
+            te.add_note(f"Open hypercubes:\n{oc_str}")
+            raise te
 
         match len(desired_containers):
             case 0:
