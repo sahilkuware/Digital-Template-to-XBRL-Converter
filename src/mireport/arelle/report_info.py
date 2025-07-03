@@ -133,7 +133,6 @@ class ArelleReportProcessor:
             utrValidate=True,
             # Warn if inconsistent duplicate facts encountered
             validateDuplicateFacts="inconsistent",
-            showOptions=True,
         )
         return self._run(source, validationOptions)
 
