@@ -5,6 +5,7 @@ from lxml import etree
 
 IX_NAMESPACE = "http://www.xbrl.org/2013/inlineXBRL"
 
+
 def debug_ixbrl_element_counts(html_file_path):
     parser = etree.XMLParser()
     tree = etree.parse(html_file_path, parser)
@@ -20,6 +21,7 @@ def debug_ixbrl_element_counts(html_file_path):
 
     facts = counts["nonFraction"] + counts["nonNumeric"]
     print(f"Total facts (nonFraction + nonNumeric): {facts}")
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

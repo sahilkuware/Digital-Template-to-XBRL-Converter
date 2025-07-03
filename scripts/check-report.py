@@ -117,6 +117,5 @@ def main() -> None:
             print(f"Viewer written to {viewer_path}.")
 
 
-
 if __name__ == "__main__":
     main()

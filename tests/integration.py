@@ -13,9 +13,11 @@ TEST_CASES = [
     ("tests/data/vsme-unit-test-v1.0.0.xlsx", 159),
 ]
 
+
 def format_subprocess_output(result: subprocess.CompletedProcess) -> str:
     """Format stdout and stderr of a subprocess result for debug output."""
     return f"STDOUT:\n{result.stdout}\nSTDERR:\n{result.stderr}"
+
 
 @pytest.mark.parametrize("input_file,expected_fact_count", TEST_CASES)
 def test_parse_and_ixbrl_fact_count(input_file, expected_fact_count, tmp_path):
@@ -26,7 +28,7 @@ def test_parse_and_ixbrl_fact_count(input_file, expected_fact_count, tmp_path):
         [
             sys.executable,
             "scripts/parse-and-ixbrl.py",
-            "--skip-validation", # Skip XBRL validation as we're testing fact production in this test
+            "--skip-validation",  # Skip XBRL validation as we're testing fact production in this test
             str(input_path),
             str(output_file),
         ],
@@ -34,7 +36,9 @@ def test_parse_and_ixbrl_fact_count(input_file, expected_fact_count, tmp_path):
         text=True,
     )
 
-    assert result.returncode == 0, f"Script failed for {input_file}:\n{format_subprocess_output(result)}"
+    assert result.returncode == 0, (
+        f"Script failed for {input_file}:\n{format_subprocess_output(result)}"
+    )
 
     assert output_file.exists(), (
         f"Output HTML file was not created for {input_file}.\n"
