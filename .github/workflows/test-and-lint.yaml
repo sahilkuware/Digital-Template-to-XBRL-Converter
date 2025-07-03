@@ -41,15 +41,17 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/pyproject.toml') }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/pyproject.toml', '.github/workflows/**/*.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pip-
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install .[dev]
+          pip install .[dev] pytest-github-actions-annotate-failures
 
       - name: Run Pytest
-        run: pytest
+        run: pytest --tb=short --color=yes
+        env:
+          PYTEST_GITHUB_ACTIONS_ANNOTATE: "true"
 
