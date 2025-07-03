@@ -7,8 +7,7 @@ from dataclasses import dataclass
 from datetime import date, datetime
 from itertools import combinations
 from pathlib import Path
-from typing import BinaryIO, NamedTuple, Optional
-from xml.sax.saxutils import escape as xml_escape
+from typing import BinaryIO, NamedTuple, Optional, Self
 
 from dateutil.parser import parse as parse_datetime
 from dateutil.relativedelta import relativedelta
@@ -27,6 +26,7 @@ from mireport.excelutil import (
     EXCEL_PLACEHOLDER_VALUE,
     _CellType,
     _CellValue,
+    excelCellOrCellRangeRef,
     excelCellRangeRef,
     excelCellRef,
     excelDefinedNameRef,
@@ -44,7 +44,7 @@ from mireport.taxonomy import (
     getTaxonomy,
     listTaxonomies,
 )
-from mireport.xbrlreport import FactBuilder, InlineReport
+from mireport.xbrlreport import FactBuilder, InlineReport, _FactValue
 
 L = logging.getLogger(__name__)
 
@@ -99,9 +99,7 @@ class CellAndXBRLMetadataHolder(CellRangeMetadata):
     concept: Concept
 
     @classmethod
-    def fromCellRangeMetadata(
-        cls, holder: CellRangeMetadata, concept: Concept
-    ) -> "CellAndXBRLMetadataHolder":
+    def fromCellRangeMetadata(cls, holder: CellRangeMetadata, concept: Concept) -> Self:
         """
         Create a CellAndXBRLMetadataHolder instance from a CellRangeMetadataHolder and a Concept.
 
@@ -916,8 +914,8 @@ class ExcelProcessor:
                                     f"Primary item {priItem.definedName.name} spans multiple columns and has multiple values ({values}). Skipping.",
                                     Severity.ERROR,
                                     MessageType.ExcelParsing,
-                                    excel_reference=excelCellRangeRef(
-                                        priItem.worksheet, priItem.cellRange
+                                    excel_reference=excelCellOrCellRangeRef(
+                                        priItem.worksheet, priItem.cellRange, cell
                                     ),
                                 )
                                 broken = True
@@ -939,7 +937,7 @@ class ExcelProcessor:
                                         dim
                                     )
                                 ) is not None and dimValue != defaultValue:
-                                    factBuilder.addAspect(dim.qname, dimValue.qname)
+                                    factBuilder.setExplicitDimension(dim, dimValue)
 
                         if concept.isNumeric:
                             unitHolder = None
@@ -975,17 +973,18 @@ class ExcelProcessor:
                             else:
                                 L.info(f"{td.cellRange.bounds=}, {rnum=}")
                             if tdValue is not None:
-                                factBuilder.addAspect(
-                                    tdConcept.qname,
-                                    f'"<{tdConcept.typedElement}>{xml_escape(str(tdValue))}</{tdConcept.typedElement}>"',
-                                )
+                                if not isinstance(tdValue, _FactValue):
+                                    tdValue = str(tdValue)
+                                factBuilder.setTypedDimension(tdConcept, tdValue)
                             else:
                                 broken = True
                                 self._results.addMessage(
                                     f"Required typed dimension {tdConcept.qname} not set",
                                     Severity.ERROR,
                                     MessageType.Conversion,
-                                    excel_reference=excelCellRef(td.worksheet, tdCell),
+                                    excel_reference=excelCellOrCellRangeRef(
+                                        td.worksheet, td.cellRange, tdCell
+                                    ),
                                 )
 
                         for ed in explicit_dimensions:
@@ -1005,7 +1004,9 @@ class ExcelProcessor:
                                     f"Required explicit dimension {edConcept.qname} not set. Cell value '{edValue}'",
                                     Severity.ERROR,
                                     MessageType.Conversion,
-                                    excel_reference=excelCellRef(ed.worksheet, edCell),
+                                    excel_reference=excelCellOrCellRangeRef(
+                                        ed.worksheet, ed.cellRange, edCell
+                                    ),
                                 )
                                 broken = True
                                 continue
@@ -1026,8 +1027,8 @@ class ExcelProcessor:
                                 )
 
                             if memberConcept is not None:
-                                factBuilder.addAspect(
-                                    edConcept.qname, memberConcept.qname
+                                factBuilder.setExplicitDimension(
+                                    edConcept, memberConcept
                                 )
                             else:
                                 broken = True
@@ -1035,7 +1036,9 @@ class ExcelProcessor:
                                     f"Required explicit dimension {edConcept.qname} not set. Cell value '{edValue}'",
                                     Severity.ERROR,
                                     MessageType.Conversion,
-                                    excel_reference=excelCellRef(ed.worksheet, edCell),
+                                    excel_reference=excelCellOrCellRangeRef(
+                                        ed.worksheet, ed.cellRange, edCell
+                                    ),
                                 )
 
                         if concept.isEnumerationSingle:
@@ -1344,7 +1347,7 @@ class ExcelProcessor:
                 for dim, dimValue in presetDimensions.items():
                     defaultValue = self.taxonomy.getDimensionDefault(dim)
                     if defaultValue is None or dimValue != defaultValue:
-                        fb.addAspect(dim.qname, dimValue.qname)
+                        fb.setExplicitDimension(dim, dimValue)
 
                     dimValueDN: Optional[DefinedName] = None
                     if (
@@ -1547,7 +1550,7 @@ class ExcelProcessor:
                 )
 
         if cell_is_percentage:
-            fb.setPercentage(value, decimals, inputIsDecimalForm=True)
+            fb.setPercentageValue(value, decimals, inputIsDecimalForm=True)
         else:
             fb.setDecimals(decimals)
         return
