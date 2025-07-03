@@ -13,6 +13,9 @@ __all__ = ["loadMetaData"]
 def loadMetaData() -> None:
     """Loads the taxonomies, unit registry and other models."""
     for f in getJsonFiles(taxonomies):
-        _loadTaxonomyFromFile(getObject(f))
+        try:
+            _loadTaxonomyFromFile(getObject(f))
+        except Exception as e:
+            logging.error(f"Error loading taxonomy from {f.name}", exc_info=e)
 
     _loadVsmeDefaults(getObject(getResource(excel_templates, "vsme.json")))
