@@ -49,6 +49,7 @@ def callArelleForTaxonomyInfo(
         abortOnMajorError=True,
         entrypointFile=entry_point,
         internetConnectivity="offline",
+        formulaAction="none",
         keepOpen=False,
         logFormat="%(asctime)s [%(messageCode)s] %(message)s - %(file)s",
         logPropagate=False,
