@@ -6,11 +6,17 @@ from pathlib import Path
 import pytest
 from lxml import etree
 
-skip_if_not_main = pytest.mark.skipif(
-    not os.environ.get("GITHUB_REF", "").endswith("/main"),
-    reason="Validation test are slow and only run as part of Github Actions on main branch",
-)
 
+def is_main_or_pr_to_main():
+    github_ref = os.environ.get("GITHUB_REF", "")
+    github_base_ref = os.environ.get("GITHUB_BASE_REF", "")
+
+    return github_ref.endswith("/main") or github_base_ref == "main"
+
+skip_if_not_main = pytest.mark.skipif(
+    not is_main_or_pr_to_main(),
+    reason="Validation tests are slow and only run on main branch or PRs targeting main",
+)
 
 IX_NAMESPACE = "http://www.xbrl.org/2013/inlineXBRL"
 
