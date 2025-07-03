@@ -5,6 +5,7 @@ import time
 from pathlib import Path
 
 from mireport.arelle.report_info import ArelleReportProcessor, getOrCreateReportPackage
+from mireport.conversionresults import ConversionResultsBuilder
 
 
 def parse_args() -> argparse.Namespace:
@@ -28,6 +29,12 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=None,
         help="The path of the viewer to be created.",
+    )
+    argparser.add_argument(
+        "--ignore-calculation-warnings",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Ignore calculation warnings when validating the report package.",
     )
     args = argparser.parse_args()
     return args
@@ -84,18 +91,38 @@ def main() -> None:
     source = getOrCreateReportPackage(report_path)
 
     if not viewer_path:
-        result = a.validateReportPackage(source)
+        arelle_result = a.validateReportPackage(
+            source, disableCalculationValidation=args.ignore_calculation_warnings
+        )
     else:
         if viewer_path.is_file():
             print(f"Overwriting {viewer_path}.")
-        result = a.generateInlineViewer(source)
+        arelle_result = a.generateInlineViewer(source)
         with open(viewer_path, "wb") as out:
-            shutil.copyfileobj(result.viewer.fileLike(), out)
-    if result.logLines:
+            shutil.copyfileobj(arelle_result.viewer.fileLike(), out)
+    if arelle_result.logLines:
         print("\t", end="")
-        print(*result.logLines, sep="\n\t")
+        print(*arelle_result.logLines, sep="\n\t")
     elapsed = (time.perf_counter_ns() - start) / 1_000_000_000
     print(f"Finished querying Arelle ({elapsed:,.2f} seconds elapsed).")
+
+    results = ConversionResultsBuilder()
+    results.addMessages(arelle_result.messages)
+    if results.hasErrorsOrWarnings():
+        if results.hasErrors():
+            print("The report package has errors.")
+        else:
+            print("The report package has warnings.")
+        print("Issues:")
+        for message in results.userMessages:
+            print(f"\t{message}")
+        raise SystemExit(
+            "The report package has errors or warnings. Please check the output above."
+        )
+    else:
+        print("The report package is valid and has no errors or warnings.")
+        if viewer_path:
+            print(f"Viewer written to {viewer_path}.")
 
 
 if __name__ == "__main__":

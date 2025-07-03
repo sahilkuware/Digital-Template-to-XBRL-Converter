@@ -10,8 +10,8 @@ from pathlib import Path
 from typing import BinaryIO, NamedTuple, Optional
 from xml.sax.saxutils import escape as xml_escape
 
-from dateutil.relativedelta import relativedelta
 from dateutil.parser import parse as parse_datetime
+from dateutil.relativedelta import relativedelta
 from openpyxl import Workbook
 from openpyxl.cell.cell import Cell
 from openpyxl.workbook.defined_name import DefinedName
@@ -820,9 +820,21 @@ class ExcelProcessor:
                         self._definedNameToXBRLMap.pop(holder.definedName)
 
     def _createNamedPeriods(self) -> None:
-        potentialPeriodHolders = [ holder for holder in self._definedNameToXBRLMap.values() if holder.concept.isAbstract ]
-        membersWithPotentialPeriods = {dimValue for dimPair in self._presetDimensions.values() for dimValue in dimPair.values()}
-        periodHolders = [ p for p in potentialPeriodHolders if p.concept in membersWithPotentialPeriods ]
+        potentialPeriodHolders = [
+            holder
+            for holder in self._definedNameToXBRLMap.values()
+            if holder.concept.isAbstract
+        ]
+        membersWithPotentialPeriods = {
+            dimValue
+            for dimPair in self._presetDimensions.values()
+            for dimValue in dimPair.values()
+        }
+        periodHolders = [
+            p
+            for p in potentialPeriodHolders
+            if p.concept in membersWithPotentialPeriods
+        ]
         for periodHolder in periodHolders:
             dimValueDN = periodHolder.definedName
             namedPeriod = dimValueDN.name
@@ -831,9 +843,7 @@ class ExcelProcessor:
                 self._definedNameToXBRLMap.pop(dimValueDN)
                 continue
 
-            if (isinstance(year, bool)
-                or not isinstance(year, float | int | str)
-            ):
+            if isinstance(year, bool) or not isinstance(year, float | int | str):
                 self._results.addMessage(
                     f"Unable to extract year for {dimValueDN.name}. Cell value '{year}'",
                     Severity.ERROR,
