@@ -13,6 +13,7 @@ def is_main_or_pr_to_main():
 
     return github_ref.endswith("/main") or github_base_ref == "main"
 
+
 skip_if_not_main = pytest.mark.skipif(
     not is_main_or_pr_to_main(),
     reason="Validation tests are slow and only run on main branch or PRs targeting main",
