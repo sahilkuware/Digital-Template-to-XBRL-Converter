@@ -11,98 +11,88 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{{ entityName | e }}&#8201;&#8212;&#8201;XBRL Sustainability Report&#8201;&#8212;&#8201;{{ macros.render_duration_period_endyear(report_period) }}</title>
+        <title>{{ entityName | e }} - Sustainability Report</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <style type="text/css">
-{% include 'style.css.jinja' %}
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background: #f8f9fa; line-height: 1.6; }
+            .container { max-width: 1200px; margin: 0 auto; }
+            .header { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 30px; border-radius: 8px; text-align: center; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+            .header h1 { margin: 0; font-size: 2.5rem; font-weight: 300; }
+            .header p { margin: 10px 0 0 0; opacity: 0.9; font-size: 1.1rem; }
+            .card { background: white; padding: 30px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-left: 4px solid #3b82f6; }
+            .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px; }
+            .metric { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); padding: 25px; border-radius: 8px; text-align: center; border: 1px solid #bae6fd; }
+            .metric-number { font-size: 2.5rem; font-weight: 600; color: #1e40af; margin-bottom: 5px; }
+            .metric-label { font-size: 0.95rem; color: #64748b; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+            .fact-list { margin: 20px 0; }
+            .fact { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #e2e8f0; }
+            .fact:last-child { border-bottom: none; }
+            .fact-label { font-weight: 600; color: #374151; flex: 1; }
+            .fact-value { color: #6b7280; text-align: right; margin-left: 20px; font-weight: 500; }
+            .chart-container { height: 350px; margin: 30px 0; }
+            .section-title { color: #1e40af; margin-bottom: 20px; font-size: 1.5rem; font-weight: 600; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+            table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+            th, td { padding: 12px 15px; border: 1px solid #e2e8f0; text-align: left; }
+            th { background: linear-gradient(135deg, #f8fafc, #f1f5f9); font-weight: 600; color: #475569; }
+            tr:nth-child(even) { background: #f8fafc; }
+            tr:hover { background: #f1f5f9; }
+            .footer { margin-top: 40px; padding: 20px; background: #f1f5f9; border-radius: 8px; text-align: center; color: #64748b; font-size: 0.9rem; }
         </style>
     </head>
     <body>
         <div style="display:none">
             {{ '{{ header }}' }}
         </div>
-        <!-- Cover Page -->
-        <div class="page portrait-page cover-page">
-            <div class="entity-name"><h2>{{ entityName | e }}</h2></div>
-            <div class="report-title"><h1>Sustainability Report</h1></div>
-            <div class="report-period"><h1>{{ macros.render_duration_period_endyear(report_period) }}</h1></div>
-            <div class="report-subtitle"><h3>Prepared in accordance with the EFRAG Voluntary Sustainability Reporting Standard for Non-Listed SMEs (VSME), released on 17 December 2024</h3></div>
+        
+        <div class="container">
+            <div class="header">
+                <h1>{{ entityName | e }}</h1>
+                <p>Sustainability Report {{ macros.render_duration_period_endyear(report_period) }}</p>
+                <p>VSME Standard Compliant</p>
+            </div>
+            
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-number">{{ facts | count }}</div>
+                    <div class="metric-label">Total Metrics</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">{{ sections | selectattr('hasFacts') | list | count }}</div>
+                    <div class="metric-label">Categories</div>
         </div>
-        <div class="page portrait-page doc-page" id="document-information">
-            <div class="document-information">
-                <h2>Document Information</h2>
-                <dl class="document-info-list">
-                    {% for item in documentInfo %}
-                    <dt>{{ item.key | e }}</dt>
-                    <dd>
-                        {% if item.format_macro %}
-                            {{ macros[item.format_macro](item.value) }}
-                        {% else %}
-                            {{ item.value | e }}
-                        {% endif %}
-                    </dd>
-                    {% endfor %}
-                    <dt>Report generated</dt>
-                    <dd>{{ macros.render_datetime(now_utc()) }}</dd>
-                </dl>
-                <div class="document-note">
-                    <p>All disclosures are related to the reporting period above unless specified otherwise.</p>
+                <div class="metric">
+                    <div class="metric-number">{{ macros.render_duration_period_endyear(report_period) }}</div>
+                    <div class="metric-label">Report Year</div>
                 </div>
             </div>
-        </div>
-        <div class="page portrait-page toc-page" id="table-of-contents">
-            <h1>Table of Contents</h1>
-            <ol class="toc-list">
-{% for section in sections if section.hasFacts %}
-                <li>
-                    <a href="#section-class{{loop.index}}">
-                        {{ section.title | e }}
-                    </a>
-                </li>
-{% endfor %}
-            </ol>
-        </div>
-{% for section in sections if section.hasFacts %}
-        {% if section.style is sameas PresentationStyle.List %}
-        <div class="page portrait-page">
-            {{ macros.create_h2_title(section, loop) }}
 
+{% for section in sections if section.hasFacts %}
+            <div class="card">
+                <h2 class="section-title">{{ section.title | e }}</h2>
+                
+        {% if section.style is sameas PresentationStyle.List %}
             <div class="fact-list">
             {% for rel, factList in section.relationshipToFact.items() %}
-                {# Determine alternating shade suffix based on the loop index #}
-                {% set shade = 'b' if loop.index0 is even else 'a' %}
                 {% for fact in factList %}
-                    {% set documentation = rel.concept.getDocumentationLabel() %}
-                    <dl class="fact fact-depth-{{ rel.depth if rel.depth <= 4 else 4 }} fact-depth-{{ rel.depth if rel.depth <= 4 else 4 }}-{{ shade }}">
-                        <dt class="fact-value {% if fact.concept.isTextblock %}fact-textblock{% endif %}" title="{{ rel.concept.qname }}">{{ macros.render_fact_value(fact) }}{% set ns.fact_count = ns.fact_count + 1 %}</dt>
-                        <dd class="fact-label"><span {% if documentation != none %}class="hover-box"{% endif %}>{{ rel.concept.getStandardLabel() | e }}{% if documentation != none %}<span class="tooltip">{{ rel.concept.getDocumentationLabel() | e }}</span>{% endif %}</span></dd>
-                        {% if fact.hasNonDefaultPeriod %}
-                        <dd class="fact-period">Reporting period: {{ macros.render_period(fact) }}</dd>
-                        {% endif %}
-                        {% set reference = none %}
-                        {% if reference != none %}
-                        <dd class="fact-ref">{{ rel.concept.getDocumentationLabel() | e }}</dd>
-                        {% endif %}
-                    </dl>
+                        <div class="fact">
+                            <span class="fact-label">{{ rel.concept.getStandardLabel() | e }}</span>
+                            <span class="fact-value">{{ macros.render_fact_value(fact) }}{% set ns.fact_count = ns.fact_count + 1 %}</span>
+                        </div>
                 {% endfor %}
             {% endfor %}
             </div>
-        </div>
+                
         {% elif section.style is sameas PresentationStyle.Table %}
-        <div class="page {% if section.dataColumns | length > 4 %}landscape-page{% else %}portrait-page{% endif %}">
-            {{ macros.create_h2_title(section, loop) }}
-
-            <table class="thematic-table">
+                <table>
                 <thead>
                 {% for row in section.newColumnHeadings %}
-                    {% set rowloop = loop %}
                     <tr>
                     {% for column in row %}
-                        <th colspan="{{ column.colspan }}" rowspan="{{ column.rowspan }}" class="{% if column.numeric %}numeric{% elif section.numeric and not loop.first %}numeric{% elif not loop.first and rowloop.first and (row | count <= 2)  %}center{% else %}noop{% endif %}">
+                            <th colspan="{{ column.colspan }}" rowspan="{{ column.rowspan }}">
                         {% if column.value is none %}
-                            {# nothing to do #}
                         {% elif column.value is string %}
                            {{ column.value | default("") }}
-                        {% elif rowloop.first and column.isDuration %}
+                                {% elif loop.first and column.isDuration %}
                             {{ macros.render_duration_period(column.value) }}
                         {% elif column.isDuration %}
                             {{ macros.render_duration_period_endyear(column.value) }}
@@ -116,56 +106,24 @@
                     </tr>
                 {% endfor %}
                 </thead>
-{#
-                <thead>
-                    {% if section.unitSymbol is not none %}
-                    <tr>
-                        <th {% if not rowHeadingsHaveTitle %}rowspan="2"{% endif %}></th>
-                        <th colspan="{{ (section.columnHeadings | count) - 1 }}" class="numeric">Units: {{section.unitSymbol}}</th>
-                    </tr>
-                    {% endif %}
-                    <tr>
-                        {% for concept in section.columnHeadings %}
-                            {% if loop.first and section.unitSymbol and not rowHeadingsHaveTitle %}
-                        <!-- nothing -->
-                            {% elif concept is none %}
-                        <th {% if section.columnUnits %}rowspan="2"{% endif %}></th>
-                            {% else %}
-                        <th>{{ concept.getStandardLabel() | e }}</th>
-                            {% endif %}
-                        {% endfor %}
-                    </tr>
-                    {% if section.unitSymbol is none and section.columnUnits %}
-                    <tr>
-                        <th></th>
-                        {% for unitSymbol in section.columnUnits %}
-                            {% if unitSymbol is none %}
-                        <th></th>
-                            {% else %}
-                        <th class="numeric">{{unitSymbol}}</th>
-                            {% endif %}
-                        {% endfor %}
-                    </tr>
-                    {% endif %}
-                </thead>
-#}
                 <tbody>
                     {% for row in section.data %}
                     <tr>
                         {% set rowHeading = section.rowHeadings[loop.index0] %}
                         {% if rowHeading is defined %}
-                            {% set class = "numeric-row" if section.numeric else "row" %}
+                            <th>
                             {% if rowHeading is string %}
-                        <th class="{{ class }}">{{ rowHeading | e }} </th>
+                                    {{ rowHeading | e }}
                             {% else %}
-                        <th class="{{ class }}">{{ rowHeading.getStandardLabel(removeSuffix=True) | e }}</th>
+                                    {{ rowHeading.getStandardLabel(removeSuffix=True) | e }}
                             {% endif %}
+                            </th>
                         {% endif %}
                         {% for fact in row %}
                             {% if fact is none %}
                         <td></td>
                             {% else %}
-                        <td {% if fact.concept.isNumeric%}class="numeric"{% endif %}>
+                                <td>
                         {{ macros.render_fact_value(fact, section.unitSymbol or section.columnHasUnit(loop.index0)) }}{% set ns.fact_count = ns.fact_count + 1 %}
                         </td>
                             {% endif %}
@@ -174,20 +132,33 @@
                     {% endfor %}
                 </tbody>
             </table>
+                {% endif %}
         </div>
-        {% else %}
-        <div class="page portrait-page">
-            <h2>{{ section.title | e }}</h2>
-            <pre>Unsupported presentation style. [{{section.style.name}}{% if section.tabular %}, {{ section.tableStyle.name }}{% endif %}]</pre>
-        </div>
-        {% endif %}
 {% endfor %}
 
-  <!-- Final Page -->
-  <div class="page portrait-page footer-page">
-    <p>This report contains {{ ns.fact_count }} XBRL facts ({{ facts | count }} unique facts).</p>
+            <div class="card">
+                <h2 class="section-title">Report Information</h2>
+                <div class="fact-list">
+                    <div class="fact">
+                        <span class="fact-label">Standard</span>
+                        <span class="fact-value">VSME (Voluntary Sustainability Reporting Standard for SMEs)</span>
+                    </div>
+                    <div class="fact">
+                        <span class="fact-label">Generated</span>
+                        <span class="fact-value">{{ macros.render_datetime(now_utc()) }}</span>
+                    </div>
+                    <div class="fact">
+                        <span class="fact-label">Total Facts</span>
+                        <span class="fact-value">{{ ns.fact_count }} XBRL facts</span>
+                    </div>
+                </div>
   </div>
 
+            <div class="footer">
+                <p><strong>DeCarbon Platform</strong> | Professional Sustainability Reporting</p>
+                <p>Generated in accordance with EFRAG VSME Standard</p>
+            </div>
+        </div>
 </body>
 </html>
   
