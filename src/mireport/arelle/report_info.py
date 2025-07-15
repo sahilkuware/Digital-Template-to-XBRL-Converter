@@ -112,8 +112,15 @@ class ArelleReportProcessor:
                 ) from arelle_exception
 
     def validateReportPackage(
-        self, source: FilelikeAndFileName
+        self, source: FilelikeAndFileName, *, disableCalculationValidation: bool = False
     ) -> ArelleProcessingResult:
+        # Use Calc 1.1 round to nearest "c11r" for calculation validation unless
+        # calculation validation is disabled.
+        if disableCalculationValidation:
+            calcs = "none"
+        else:
+            calcs = "c11r"
+
         validationOptions = RuntimeOptions(
             internetConnectivity="offline" if self.workOffline is True else "online",
             keepOpen=True,
@@ -127,13 +134,11 @@ class ArelleReportProcessor:
             pluginOptions={},
             # Turn validation on
             validate=True,
-            # Use Calc 1.1 round to nearest "c11r" for calculation validation
-            calcs="c11r",
+            calcs=calcs,
             # Validate against the unit type registry
             utrValidate=True,
             # Warn if inconsistent duplicate facts encountered
             validateDuplicateFacts="inconsistent",
-            showOptions=True,
         )
         return self._run(source, validationOptions)
 
@@ -295,7 +300,7 @@ def getOrCreateReportPackage(reportPackage: Path) -> FilelikeAndFileName:
     elif reportPackage.suffix in {".xhtml", ".html", ".htm"}:
         with BytesIO() as write_bio:
             with zipfile.ZipFile(write_bio, "w") as z:
-                z.write(reportPackage, "a/reports/" + reportPackage.name)
+                z.write(reportPackage, f"a/reports/{reportPackage.name}")
                 z.writestr(
                     zinfo_or_arcname="a/META-INF/reportPackage.json",
                     data=UNCONSTRAINED_REPORT_PACKAGE_JSON,

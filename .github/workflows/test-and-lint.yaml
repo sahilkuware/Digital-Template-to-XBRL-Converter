@@ -1,0 +1,60 @@
+name: Test and Lint
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  lint:
+    name: Ruff Lint and Format Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Ruff lint check
+        uses: astral-sh/ruff-action@v1
+        with:
+          args: check . --output-format=github
+
+      - name: Run Ruff format check
+        uses: astral-sh/ruff-action@v1
+        with:
+          args: format --check .
+
+  test:
+    name: Run Tests Sequentially
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/pyproject.toml', '.github/workflows/**/*.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install .[dev] pytest-github-actions-annotate-failures
+
+      - name: Run Unit Tests
+        run: pytest tests/unitTests --tb=short --color=yes
+        env:
+          PYTEST_GITHUB_ACTIONS_ANNOTATE: "true"
+
+      - name: Run Integration Tests
+        run: pytest tests/integrationTests --tb=short --color=yes
+        env:
+          PYTEST_GITHUB_ACTIONS_ANNOTATE: "true"

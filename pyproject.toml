@@ -1,6 +1,6 @@
 [project]
 name = "mireport"
-version = "1.0.0"
+version = "1.1.0.dev0"
 description = "Converts a filled-in Excel template into an Inline XBRL Report"
 authors = [
     {name = "Stuart Rowan", email = "stuart.rowan@efrag.org"},
@@ -56,8 +56,7 @@ dev = [
 ]
 
 redis = [
-    "flask-rq>=0.3.2",
-    "RQ==2.3.2",
+    "flask-rq>=0.3.3",
     "flask-session[redis]",
 ]
 
@@ -90,19 +89,5 @@ line-length = 88
 indent-width = 4
 src = ["src"]
 
-[tool.ruff.lint.isort]
-known-local-folder = ["src"]
-
-# These aren't used.
-
-[tool.bandit]
-exclude_dirs = ["tests", "venv", ".env"]
-
-[tool.black]
-line-length = 88
-target-version = ["py311"]
-include = '\.pyi?$'
-
-[tool.isort]
-profile = "black"
-line_length = 88
+[tool.ruff.lint]
+extend-select = ["I"]
